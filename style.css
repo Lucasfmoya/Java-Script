@@ -1,0 +1,18 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(greenyellow, green);
+    background-repeat: no-repeat;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+strong{
+    margin-top: 50px;
+    background-color: rgba(6, 219, 41, 0.178);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border: 2px solid rgb(7, 92, 7);
+    border-radius: 10px;
+}

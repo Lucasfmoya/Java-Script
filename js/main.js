@@ -57,7 +57,7 @@ if (resultado <=20) {
 } */
 
 
-let dia = parseInt(prompt("Ingrese su día de nacimiento"));
+/* let dia = parseInt(prompt("Ingrese su día de nacimiento"));
 
 if (dia > 31 || dia < 1) {
     alert("Ingrese una fecha válida");
@@ -97,12 +97,41 @@ if (dia > 31 || dia < 1) {
 
     let nacimiento = dia + "/" + mes;
     console.log(nacimiento);
+} */
+
+let nombre
+let apellido
+let edad
+let direccion
+let ciudad
+let pais
+
+const PRIMERCITY = "springfield"
+const SECONCITY = "shelbyville"
+const TERCERCITY = "capital City"
+const CUARTACITY = "ogdenville"
+const QUINTACITY = "terror Lake"
+
+nombre = "Homero";
+apellido ="Simpsons";
+edad = 45;
+
+console.log ( `${nombre} ${apellido}. Edad ${edad} años `)
+
+
+const CIUDAD = "SPRINGFIELD"
+const LICENCIA = "DRIVER LICENSE"
+
+nombre = prompt("Ingrese su nombre");
+apellido = prompt("Ingrese su apellido");
+direccion = prompt("Ingrese su domicilio");
+ciudad = prompt("¿En qué ciudad vive?");
+
+if (ciudad != PRIMERCITY){
+    pais = prompt("Ingrese su país");
+}else {
+    pais ="EEUU"
 }
 
-
-
-
-
-
-
+console.log(`${CIUDAD}\n ${LICENCIA}\n ${nombre} ${apellido}\n ${direccion}\n ${ciudad} ${pais}`);
 
