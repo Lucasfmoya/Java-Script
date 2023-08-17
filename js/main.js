@@ -89,8 +89,9 @@ if (dia > 31 || dia < 1) {
             alert("Usted es de Capricornio");
         } else if ((dia >= 20 && mes == 1) || (dia <= 18 && mes == 2)) {
             alert("Usted es de Acuario");
-        } else if ((dia >= 19 && mes == 2) || (dia <= 20 && mes == 3)) {
-            alert("Usted es de Piscis");
+        } else {
+             alert("Usted es de Piscis");
+            
         }
     }
 
