@@ -1,6 +1,6 @@
 //Saludo de bienvenida.
-alert("Bienvenidos a Lubricentro O'Higgins");
-console.log("Servicio de cambio de aceite y filtros");
+alert("Bienvenidos a Lubricentro O'Higgins.");
+console.log("Servicio de cambio de aceite y filtros.");
 // Variables
 let cambioAceite;
 let precio;
@@ -17,75 +17,73 @@ while (true) {
 
 //Si es si, ejecutamos el proceso de presupuesto.    
     if (cambioAceite === "si") {
-        auto = parseInt(prompt("¿Qué vehículo posee?\n1-Chevrolet\n2-Citroen\n3-Fiat\n4-Ford\n5-Nissan\n6-Peugeot\n7-Renault\n8-Toyota\n9-Volkswagen\n10-Otro"));
+        marcaAuto();
 
         while (isNaN(auto) || auto < 0 || auto > 9) {
-            alert("Ingrese un dato válido.");
-            auto = parseInt(prompt("¿Qué vehículo posee?\n1-Chevrolet\n2-Citroen\n3-Fiat\n4-Ford\n5-Nissan\n6-Peugeot\n7-Renault\n8-Toyota\n9-Volkswagen\n0-Otro"));
+            error ();
+            marcaAuto();
         }
     //Filtramos por marca de auto.
+        if (auto >= 1 && auto <=9){
         switch (auto) {
             case 1:
                 autoMarca = "Chevrolet"
-                console.log(autoMarca);
                 break;
             case 2:
                 autoMarca = "Citroen"
-                console.log(autoMarca);
                 break;
             case 3:
                 autoMarca = "Fiat"
-                console.log(autoMarca);
                 break;
             case 4:
                 autoMarca = "Ford"
-                console.log(autoMarca);
                 break;
             case 5:
                 autoMarca = "Nissan"
-                console.log(autoMarca);
                 break;
             case 6:
                 autoMarca = "Peugeot"
-                console.log(autoMarca);
                 break;
             case 7:
                 autoMarca = "Renault"
-                console.log(autoMarca);
-                break;
+               break;
             case 8:
                 autoMarca = "Toyota"
-                console.log(autoMarca);
-                break;
-            case 9:
-                autoMarca = "Volkswagen"
-                console.log(autoMarca);
                 break;
             default:
-                autoMarca = "Otro";
-                alert("Consulte por privado para obtener su presupuesto\nWhatsApp: 3516517525")
-                console.log("Otra marca de véhiculo");
+                autoMarca = "Volkswagen"
                 break;
-        }
+            }
+        }else{
+            autoMarca = "Otra marca de véhiculo";
+            alert("Consulte por privado para obtener su presupuesto\nWhatsApp: 3516517525")
+        break;
+    }   
+        console.log(autoMarca);
         //Filtramos por tipo de motor. 
         while (autoMarca !== "Otro") {
-            autoCombustible = parseInt(prompt("¿Qué combustible utiliza su auto?\n1-Nafta\n2-Diesel"));
+            autoCombustible = parseInt(prompt("¿Qué combustible utiliza su auto?\n1-Nafta.\n2-Diesel."));
             if (autoCombustible === 1) {
-                autoCombustible = "Motor a nafta";
+                autoCombustible = "Motor naftero";
         
-            tipoDeServicio()    
-            presupuestoNaftero()    
+            tipoDeServicio();
+            presupuestoNaftero();  
             break;
             } else if (autoCombustible === 2) {
-                autoCombustible = "Motor a diesel";
+                autoCombustible = "Motor diesel";
         
-            tipoDeServicio()    
-            presupuestoDiesel()
+            tipoDeServicio();
+            presupuestoDiesel();
             break;
             } else {
-                alert("Ingrese una opción válida.");
+                error ();
             }
         }
+        console.log(autoCombustible);
+        let precioParcial = importe();
+        console.log(`${obtenerTipoServicioText()} ${precioParcial}`);
+
+        formaPago = parseInt(prompt("¿Como desea abonar el servicio?\n1-Efectivo.\n2-Tarjeta de débito o transferencia.\n3-Tarjeta de crédito."));
         break;
     } else if (cambioAceite === "no") {
         alert("¡Lo esperamos la próxima!");
