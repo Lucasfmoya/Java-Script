@@ -29,20 +29,20 @@ function obtenerTipoServicioText() {
 //Cálculo del valor del servicio según combustile y tipo de servicio elegído.
 function importe () {
     if (autoCombustible === "Motor naftero" && tipoServicio === 1){
-    return precio = "$25.000";
+    return precio = 25000;
     }else if(autoCombustible === "Motor naftero" && tipoServicio === 2){
-        return precio = "$50.000";
+        return precio = 50000;
     }else if(autoCombustible === "Motor diesel" && tipoServicio === 1){
-        return precio = "$35.000";
+        return precio = 35000;
     }else {
-        return precio = "$65.000";
+        return precio = 65000;
     }
 
 }
 
 //Plantilla de presupuesto.
 function infoServicio (){
-    alert(`${"El servicio estandar incluye cambio de aceite y filtros de aceite y aire. El valor estimado para su vehículo es de"} ${importe()}${"."}`);
+    alert(`${"El servicio estandar incluye cambio de aceite y filtros de aceite y aire. El valor estimado para su vehículo es de"} ${"$"}${importe()}${"."}`);
 }
 
 
@@ -65,7 +65,10 @@ function presupuestoDiesel (){
         default:
             infoServicio ();
     }
-
-
-
+}
+//Calcular descuento.
+function restarDescuento (precioParcial, DESCUENTO){
+    const PORCENTAJE = (precioParcial * DESCUENTO) / 100;
+    const RESTA = precioParcial - PORCENTAJE;
+    return RESTA;
 }

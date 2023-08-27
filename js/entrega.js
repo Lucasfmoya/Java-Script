@@ -10,6 +10,8 @@ let autoCombustible;
 let formaPago;
 let tipoServicio;
 const DESCUENTO = 10;
+const RECARGO = 20;
+let precioFinal;
 
 //Primera condición para saber si el programa se va a ejecutar o cerrar.
 while (true) {
@@ -84,6 +86,9 @@ while (true) {
         console.log(`${obtenerTipoServicioText()} ${precioParcial}`);
 
         formaPago = parseInt(prompt("¿Como desea abonar el servicio?\n1-Efectivo.\n2-Tarjeta de débito o transferencia.\n3-Tarjeta de crédito."));
+        if (formaPago === 1){
+            alert(`${"Tenemos un descuento para vos! Vas a pagar:"} ${restarDescuento(precioParcial, DESCUENTO)} `)
+        } 
         break;
     } else if (cambioAceite === "no") {
         alert("¡Lo esperamos la próxima!");
