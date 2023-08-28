@@ -72,7 +72,7 @@ function importe () {
 
 //Plantilla de presupuesto.
 function infoServicio (){
-    alert(`${"El servicio estandar incluye cambio de aceite y filtros de aceite y aire. El valor estimado para su vehículo es de"} ${"$"}${importe()}${"."}`);
+    alert(`El servicio estandar incluye cambio de aceite y filtros de aceite y aire. El valor estimado para su vehículo es de $ ${importe()}.`);
 }
 
 

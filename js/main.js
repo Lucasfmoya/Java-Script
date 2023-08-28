@@ -64,11 +64,11 @@ while (true) {
             formaPagoFunction ();
         }
         if (formaPago === 1){
-            alert(`${"Tenemos un descuento para vos! Vas a pagar:"} ${"$"}${restarDescuento(precioParcial, descuentoEfvo)}${"."}`);
+            alert(`Tenemos un descuento para vos! Vas a pagar: $${restarDescuento(precioParcial, descuentoEfvo)}.`);
         } else if (formaPago=== 2) {
-            alert(`${"Tenes un 5% de descuento con esta forma de pago, vas a abonar $"}${restarDescuento(precioParcial, descuentoDebit)}${"."}`);
+            alert(`Tenes un 5% de descuento con esta forma de pago, vas a abonar: $${restarDescuento(precioParcial, descuentoDebit)}.`);
         } else{
-            alert(`${"Podes abonar hasta en 12 cuotas!\n"}${"3 Pagos + 15%. Abonarias un total de $"}${sumarRecargo(precioParcial, 15)}${"."}\n${"6 Pagos + 25%. Abonarias un total de $"}${sumarRecargo(precioParcial, 25)}${"."}\n${"12 Pagos + 50%. Abonarias un total de $"}${sumarRecargo(precioParcial, 50)}${"."}`);
+            alert(`Podes abonar hasta en 12 cuotas!\n3 Pagos + 15%. Abonarias un total de: $${sumarRecargo(precioParcial, 15)}.\n6 Pagos + 25%. Abonarias un total de: $${sumarRecargo(precioParcial, 25)}.\n12 Pagos + 50%. Abonarias un total de: $${sumarRecargo(precioParcial, 50)}.`);
         }
         //Convertimos la opción númerica elegída a texto.
         formaPago = formaPagoNumeroTexto();   
