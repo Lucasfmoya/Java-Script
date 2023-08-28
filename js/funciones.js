@@ -71,8 +71,12 @@ function importe () {
 }
 
 //Plantilla de presupuesto.
-function infoServicio (){
-    alert(`El servicio estandar incluye cambio de aceite y filtros de aceite y aire. El valor estimado para su vehículo es de $ ${importe()}.`);
+function infoServicioEstandar (){
+    alert(`El servicio estandar incluye cambio de aceite y filtros de aceite y aire. El valor estimado para su vehículo es de $${importe()}.`);
+}
+
+function infoServicioCompleto (){
+    alert(`El servicio completo incluye cambio de aceite y filtros de aceite, aire, habitáculo y combustible. El valor estimado para su vehículo es de $${importe()}.`);
 }
 
 
@@ -80,20 +84,20 @@ function infoServicio (){
 function presupuestoNaftero (){
     switch (tipoServicio) {
         case 1:
-            infoServicio ();
+            infoServicioEstandar ();
             break;
         default:
-            infoServicio ();
+            infoServicioCompleto ();
             break;
 }
 }
 function presupuestoDiesel (){
     switch (tipoServicio) {
         case 1:
-            infoServicio ();
+            infoServicioEstandar ();
             break;
         default:
-            infoServicio ();
+            infoServicioCompleto ();
     }
 }
 // Dar opciones para ingresar forma de pago.
