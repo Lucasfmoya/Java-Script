@@ -1,4 +1,3 @@
-
 //Alerta de opción ingresada de forma incorrecta.
 function error (){
     alert("Ingrese una opción válida.");
@@ -97,27 +96,29 @@ function presupuestoDiesel (){
             infoServicio ();
     }
 }
+// Dar opciones para ingresar forma de pago.
+function formaPagoFunction (){
+    formaPago = parseInt(prompt("¿Como desea abonar el servicio?\n1-Efectivo.\n2-Tarjeta de débito o transferencia.\n3-Tarjeta de crédito."));
+}
 //Calcular descuento.
-function restarDescuento (precioParcial, DESCUENTO){
-    const PORCENTAJE = (precioParcial * DESCUENTO) / 100;
-    const RESTA = precioParcial - PORCENTAJE;
-    return RESTA;
-}
+function restarDescuento(valor, descuento) {
+    return valor - (valor * descuento / 100);
+  }
 //Calcular recargo.
-function sumarRecargo (precioParcial, RECARGO){
-    const PORCENTAJE = (precioParcial * RECARGO) / 100;
-    const SUMA = precioParcial + PORCENTAJE;
-    return SUMA;
-}
+function sumarRecargo(valor, recargo) {
+    return valor + (valor * recargo / 100);
+  }
 
-/* function pagoEfvo (){
-    alert(`${"Tenemos un descuento para vos! Vas a pagar:"} ${"$"}${restarDescuento(precioParcial, descuentoEfvo)} `); 
-}
 
-function pagoDebit (){
-    alert(`${"Tenes un 5% de descuento con esta forma de pago, vas a abonar $"}${restarDescuento(precioParcial, descuentoDebit)}`);
-}
+function formaPagoNumeroTexto (){
+    switch (formaPago){
+        case 1 :
+            return "Pago en efectivo 10% de descuento.";
+        case 2: 
+            return "Pago con débito o transferencia 5% de descuento.";
+        default : 
+            return "Pago con tarjeta de crédito.";
+           
+    }
 
-function pagoCredit () {
-    alert(`${"Podes abonar hasta en 12 cuotas!\n"}${"3 Pagos + 15%. Abonarias un total de $"}${sumarRecargo(precioParcial, 15)}${"."}\n${"6 Pagos + 25%. Abonarias un total de $"}${sumarRecargo(precioParcial, 25)}${"."}\n${"12 Pagos + 50%. Abonarias un total de $"}${sumarRecargo(precioParcial, 50)}${"."}`);
-} */
+}

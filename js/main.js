@@ -1,137 +1,84 @@
-//comentario de una linea
-/*comentarios de bloques igual que en css*/
-/* alert("Bienvenido a nuestro sitio web"); //alerta para cada que se actualice la página */
+//Saludo de bienvenida.
+alert("Bienvenidos a Lubricentro O'Higgins.");
+console.log("Servicio de cambio de aceite y filtros.");
+// Variables
+let cambioAceite;
+let precio;
+let auto;
+let autoMarca;
+let autoCombustible;
+let formaPago;
+let tipoServicio;
+const descuentoEfvo = 10;
+const descuentoDebit = 5; 
+let precioFinal;
 
-//Los números van solos y el texto va entre comilla
+//Primera condición para saber si el programa se va a ejecutar o cerrar.
+while (true) {
+    cambioAceite = prompt("¿Desea un presupuesto para el servicio de su vehículo?").toLowerCase();
 
-/* let valor1 = 10; // se declara la variable
-let valor2 = "Lucas"; 
-const dolar =615; //constante , no se puede redefinir una constante
+//Si es si, ejecutamos el proceso de presupuesto.    
+    if (cambioAceite === "si") {
+        marcaAuto();
 
-console.log(valor1)
-console.log(valor2)
-console.log(dolar)
- 
-//se da valor a una variable
-valor1 = 50; // "Number"
-valor2 = "Ceci"; //"String"
-
-console.log(valor1)
-console.log(valor2)
-console.log(dolar) 
- */
-
-
-/* let numeroA = 50;
-let numeroB = 20;
-
-const numeroC = 30;
-
-let resultadoSuma = numeroA + numeroB;
-console.log("SUMA: " + resultadoSuma)
-
-let resultadoResta = numeroA - numeroB;
-console.log("RESTA: " + resultadoResta)
-
-let nombre = prompt("Ingrese su nombre")
-let apellido = prompt("Ingrese su apellido")    
-let nombreCompleto = "Su nombre es " + nombre + " " + apellido;
-
-alert (nombreCompleto) */
-
-/* let altura = parseFloat(prompt("Ingrese su altura expresa en metros (ej: 1.45)"));
-let peso = parseFloat(prompt("Ingrese su peso expresado en kg (ej:  50)"));
-let resultado = peso / (altura * altura);
-
-if (altura == ""){
-    alert ("Debe ingresar altura");
-}
-
-alert("Su IMC es: " + resultado);
-
-
-if (resultado <=20) {
-    alert ("estas flaco");
-} else (resultado >=21); {
-    alert ("Estas en forma")
-} */
-
-
-/* let dia = parseInt(prompt("Ingrese su día de nacimiento"));
-
-if (dia > 31 || dia < 1) {
-    alert("Ingrese una fecha válida");
-} else {
-    let mes = parseInt(prompt("Ahora ingrese el mes de nacimiento"));
-
-    if (mes > 12 || mes < 1) {
-        alert("Ingrese un mes válido");
-    } else {
-        if ((dia >= 21 && mes == 3) || (dia <= 19 && mes == 4)) {
-            alert("Usted es de Aries");
-        } else if ((dia >= 20 && mes == 4) || (dia <= 20 && mes == 5)) {
-            alert("Usted es de Tauro");
-        } else if ((dia >= 21 && mes == 5) || (dia <= 20 && mes == 6)) {
-            alert("Usted es de Géminis");
-        } else if ((dia >= 21 && mes == 6) || (dia <= 22 && mes == 7)) {
-            alert("Usted es de Cáncer");
-        } else if ((dia >= 23 && mes == 7) || (dia <= 22 && mes == 8)) {
-            alert("Usted es de Leo");
-        } else if ((dia >= 23 && mes == 8) || (dia <= 22 && mes == 9)) {
-            alert("Usted es de Virgo");
-        } else if ((dia >= 23 && mes == 9) || (dia <= 22 && mes == 10)) {
-            alert("Usted es de Libra");
-        } else if ((dia >= 23 && mes == 10) || (dia <= 21 && mes == 11)) {
-            alert("Usted es de Escorpio");
-        } else if ((dia >= 22 && mes == 11) || (dia <= 21 && mes == 12)) {
-            alert("Usted es de Sagitario");
-        } else if ((dia >= 22 && mes == 12) || (dia <= 19 && mes == 1)) {
-            alert("Usted es de Capricornio");
-        } else if ((dia >= 20 && mes == 1) || (dia <= 18 && mes == 2)) {
-            alert("Usted es de Acuario");
-        } else {
-             alert("Usted es de Piscis");
-            
+        while (isNaN(auto) || auto < 0 || auto > 9) {
+            error ();
+            marcaAuto();
         }
+    //Filtramos por marca de auto.
+        if (auto >= 1 && auto <=9){
+            fabricanteAuto();
+        }else{
+            autoMarca = "Otra marca de véhiculo";
+            alert("Consulte por privado para obtener su presupuesto\nWhatsApp: 3516517525")
+        break;
+    }   
+        console.log(autoMarca);
+        //Filtramos por tipo de motor. 
+        while (autoMarca !== "Otro") {
+            autoCombustible = parseInt(prompt("¿Qué combustible utiliza su auto?\n1-Nafta.\n2-Diesel."));
+            if (autoCombustible === 1) {
+                autoCombustible = "Motor naftero";
+        
+            tipoDeServicio();
+            presupuestoNaftero();  
+            break;
+            } else if (autoCombustible === 2) {
+                autoCombustible = "Motor diesel";
+        
+            tipoDeServicio();
+            presupuestoDiesel();
+            break;
+            } else {
+                error ();
+            }
+        }
+        console.log(autoCombustible);
+        //Asignación de precio según opción elegída.
+        let precioParcial = importe();
+        console.log(`${obtenerTipoServicioText()} ${"$"}${precioParcial}`);
+        // Dar opciones para ingresar forma de pago.
+        formaPagoFunction ();
+        while (formaPago !==1 && formaPago !==2 && formaPago !==3){
+            error();
+            formaPagoFunction ();
+        }
+        if (formaPago === 1){
+            alert(`${"Tenemos un descuento para vos! Vas a pagar:"} ${"$"}${restarDescuento(precioParcial, descuentoEfvo)}${"."}`);
+        } else if (formaPago=== 2) {
+            alert(`${"Tenes un 5% de descuento con esta forma de pago, vas a abonar $"}${restarDescuento(precioParcial, descuentoDebit)}${"."}`);
+        } else{
+            alert(`${"Podes abonar hasta en 12 cuotas!\n"}${"3 Pagos + 15%. Abonarias un total de $"}${sumarRecargo(precioParcial, 15)}${"."}\n${"6 Pagos + 25%. Abonarias un total de $"}${sumarRecargo(precioParcial, 25)}${"."}\n${"12 Pagos + 50%. Abonarias un total de $"}${sumarRecargo(precioParcial, 50)}${"."}`);
+        }
+        //Convertimos la opción númerica elegída a texto.
+        formaPago = formaPagoNumeroTexto();   
+        console.log(formaPago);
+        break;
+    } else if (cambioAceite === "no") {
+        alert("¡Lo esperamos la próxima!");
+        break;
+    } else {
+        alert("Disculpa, no entendí tu respuesta. Responde si o no por favor.");
+
     }
-
-    let nacimiento = dia + "/" + mes;
-    console.log(nacimiento);
-} */
-
-let nombre
-let apellido
-let edad
-let direccion
-let ciudad
-let pais
-
-const PRIMERCITY = "springfield"
-const SECONCITY = "shelbyville"
-const TERCERCITY = "capital City"
-const CUARTACITY = "ogdenville"
-const QUINTACITY = "terror Lake"
-
-nombre = "Homero";
-apellido ="Simpsons";
-edad = 45;
-
-console.log ( `${nombre} ${apellido}. Edad ${edad} años `)
-
-
-const CIUDAD = "SPRINGFIELD"
-const LICENCIA = "DRIVER LICENSE"
-
-nombre = prompt("Ingrese su nombre");
-apellido = prompt("Ingrese su apellido");
-direccion = prompt("Ingrese su domicilio");
-ciudad = prompt("¿En qué ciudad vive?");
-
-if (ciudad != PRIMERCITY){
-    pais = prompt("Ingrese su país");
-}else {
-    pais ="EEUU"
 }
-
-console.log(`${CIUDAD}\n ${LICENCIA}\n ${nombre} ${apellido}\n ${direccion}\n ${ciudad} ${pais}`);
-
