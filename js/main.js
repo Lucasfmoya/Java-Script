@@ -9,8 +9,8 @@ let autoMarca;
 let autoCombustible;
 let formaPago;
 let tipoServicio;
-const DESCUENTO = 10;
-const RECARGO = 20;
+const descuentoEfvo = 10;
+const descuentoDebit = 5; 
 let precioFinal;
 
 //Primera condición para saber si el programa se va a ejecutar o cerrar.
@@ -27,35 +27,7 @@ while (true) {
         }
     //Filtramos por marca de auto.
         if (auto >= 1 && auto <=9){
-        switch (auto) {
-            case 1:
-                autoMarca = "Chevrolet"
-                break;
-            case 2:
-                autoMarca = "Citroen"
-                break;
-            case 3:
-                autoMarca = "Fiat"
-                break;
-            case 4:
-                autoMarca = "Ford"
-                break;
-            case 5:
-                autoMarca = "Nissan"
-                break;
-            case 6:
-                autoMarca = "Peugeot"
-                break;
-            case 7:
-                autoMarca = "Renault"
-               break;
-            case 8:
-                autoMarca = "Toyota"
-                break;
-            default:
-                autoMarca = "Volkswagen"
-                break;
-            }
+            fabricanteAuto();
         }else{
             autoMarca = "Otra marca de véhiculo";
             alert("Consulte por privado para obtener su presupuesto\nWhatsApp: 3516517525")
@@ -82,24 +54,31 @@ while (true) {
             }
         }
         console.log(autoCombustible);
+        //Asignación de precio según opción elegída.
         let precioParcial = importe();
-        console.log(`${obtenerTipoServicioText()} ${precioParcial}`);
-
-        formaPago = parseInt(prompt("¿Como desea abonar el servicio?\n1-Efectivo.\n2-Tarjeta de débito o transferencia.\n3-Tarjeta de crédito."));
+        console.log(`${obtenerTipoServicioText()} ${"$"}${precioParcial}`);
+        // Dar opciones para ingresar forma de pago.
+        formaPagoFunction ();
+        while (formaPago !==1 && formaPago !==2 && formaPago !==3){
+            error();
+            formaPagoFunction ();
+        }
         if (formaPago === 1){
-            alert(`${"Tenemos un descuento para vos! Vas a pagar:"} ${restarDescuento(precioParcial, DESCUENTO)} `)
-        } 
+            alert(`${"Tenemos un descuento para vos! Vas a pagar:"} ${"$"}${restarDescuento(precioParcial, descuentoEfvo)}${"."}`);
+        } else if (formaPago=== 2) {
+            alert(`${"Tenes un 5% de descuento con esta forma de pago, vas a abonar $"}${restarDescuento(precioParcial, descuentoDebit)}${"."}`);
+        } else{
+            alert(`${"Podes abonar hasta en 12 cuotas!\n"}${"3 Pagos + 15%. Abonarias un total de $"}${sumarRecargo(precioParcial, 15)}${"."}\n${"6 Pagos + 25%. Abonarias un total de $"}${sumarRecargo(precioParcial, 25)}${"."}\n${"12 Pagos + 50%. Abonarias un total de $"}${sumarRecargo(precioParcial, 50)}${"."}`);
+        }
+        //Convertimos la opción númerica elegída a texto.
+        formaPago = formaPagoNumeroTexto();   
+        console.log(formaPago);
         break;
     } else if (cambioAceite === "no") {
         alert("¡Lo esperamos la próxima!");
         break;
     } else {
-        alert("Disculpa, no entendí tu respuesta. Responde si o no por favor.")
+        alert("Disculpa, no entendí tu respuesta. Responde si o no por favor.");
 
     }
-
-
-
-
-
 }

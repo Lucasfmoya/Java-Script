@@ -1,4 +1,3 @@
-
 //Alerta de opción ingresada de forma incorrecta.
 function error (){
     alert("Ingrese una opción válida.");
@@ -16,7 +15,38 @@ function tipoDeServicio (){
             tipoServicio = parseInt(prompt("¿Qué tipo de servicio necesita:\n1-Estandar\n2-Completo"));
                 }
 }
-
+//Nombrando marcas de autos dependiendo opcion numérica elegida.
+function fabricanteAuto(){
+    switch (auto) {
+        case 1:
+            autoMarca = "Chevrolet"
+            break;
+        case 2:
+            autoMarca = "Citroen"
+            break;
+        case 3:
+            autoMarca = "Fiat"
+            break;
+        case 4:
+            autoMarca = "Ford"
+            break;
+        case 5:
+            autoMarca = "Nissan"
+            break;
+        case 6:
+            autoMarca = "Peugeot"
+            break;
+        case 7:
+            autoMarca = "Renault"
+           break;
+        case 8:
+            autoMarca = "Toyota"
+            break;
+        default:
+            autoMarca = "Volkswagen"
+            break;
+        }
+}
 //Nombrando servicio según sea estándar o completo.
 function obtenerTipoServicioText() {
     if (tipoServicio === 1) {
@@ -66,9 +96,29 @@ function presupuestoDiesel (){
             infoServicio ();
     }
 }
+// Dar opciones para ingresar forma de pago.
+function formaPagoFunction (){
+    formaPago = parseInt(prompt("¿Como desea abonar el servicio?\n1-Efectivo.\n2-Tarjeta de débito o transferencia.\n3-Tarjeta de crédito."));
+}
 //Calcular descuento.
-function restarDescuento (precioParcial, DESCUENTO){
-    const PORCENTAJE = (precioParcial * DESCUENTO) / 100;
-    const RESTA = precioParcial - PORCENTAJE;
-    return RESTA;
+function restarDescuento(valor, descuento) {
+    return valor - (valor * descuento / 100);
+  }
+//Calcular recargo.
+function sumarRecargo(valor, recargo) {
+    return valor + (valor * recargo / 100);
+  }
+
+
+function formaPagoNumeroTexto (){
+    switch (formaPago){
+        case 1 :
+            return "Pago en efectivo 10% de descuento.";
+        case 2: 
+            return "Pago con débito o transferencia 5% de descuento.";
+        default : 
+            return "Pago con tarjeta de crédito.";
+           
+    }
+
 }
