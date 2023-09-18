@@ -56,9 +56,7 @@ while (true) {
     if (cambioAceite === "si") {
     funcionOSuperior(elegirMarca());
     validacionAutos();
-    validarCombustible();
-    mostrarItemService();
-    mostrarFormaPago();
+    validacionDeEjecucion();
     break;
     } else if (cambioAceite === "no") {
     alert("¡Lo esperamos la próxima!");

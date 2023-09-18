@@ -51,7 +51,6 @@ const validarCombustible = () =>{
         autoCombustible = "Motor naftero";
     } else if (autoCombustible === 2) {
         autoCombustible = "Motor diesel";
-        //presupuestoDiesel();  
     } else {
         error();
         validarCombustible();
@@ -104,6 +103,16 @@ const mostrarFormaPago = () => {
         alert(`Tenes un 7% de descuento con esta forma de pago, vas a abonar: $${restarDescuento(importe, descuentoTrasnf)}.`);
     }
 };
+
+// Validar si el programa va a ejecutarse.
+const validacionDeEjecucion = () =>{
+    while(eleccion !== 10){
+        validarCombustible();
+        mostrarItemService();
+        mostrarFormaPago();
+        break;
+    }
+} 
 //Calcular descuento.
 const restarDescuento = (valor, descuento)=> {
     return valor - (valor * descuento / 100);
