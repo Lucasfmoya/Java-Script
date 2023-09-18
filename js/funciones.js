@@ -1,128 +1,114 @@
-//Alerta de opción ingresada de forma incorrecta.
-function error (){
+// Función error, colocar dentro de otro archivo
+const error = () => {
     alert("Ingrese una opción válida.");
-}   
-//Elección de marca de auto.
-function marcaAuto (){
-    auto = parseInt(prompt("¿Qué vehículo posee?\n1-Chevrolet\n2-Citroen\n3-Fiat\n4-Ford\n5-Nissan\n6-Peugeot\n7-Renault\n8-Toyota\n9-Volkswagen\n0-Otro"));   
-}
-
-//Bucle para evitar opciones inexistentes.
-function tipoDeServicio (){
-    tipoServicio = parseInt(prompt("¿Qué tipo de servicio necesita:\n1-Estandar\n2-Completo"));
+};
+// Función que recibe a otra función como parámetro. 
+const funcionOSuperior = (i) => {
+    eleccion = parseInt(prompt(i));
+};
+// Función para elegir la marca del auto.
+const elegirMarca = () => {
+    let opciones;
+    opciones = "¿Qué vehículo posee?\n";
+    marcaAutos.forEach((auto, i) => {
+        opciones += `${i + 1}. ${auto.marca}\n`;
+    });
+    return opciones;
+};
+ // Función para validar si el número ingresado es una opción válida.
+ const validacionAutos = () => {
+    while (isNaN(eleccion) || eleccion == 0 || eleccion > 10) {
+        error();
+        eleccion = parseInt(prompt(elegirMarca()));
+    }
+    if (eleccion >= 1 && eleccion < 10) {
+        let tipoServicio;
+        tipoServicio = parseInt(prompt(`1. ${serviciosOfrecidos[0]}.\n2. ${serviciosOfrecidos[1]}.`));
         while (tipoServicio !== 1 && tipoServicio !== 2) {
-            error ();
-            tipoServicio = parseInt(prompt("¿Qué tipo de servicio necesita:\n1-Estandar\n2-Completo"));
-                }
-}
-//Nombrando marcas de autos dependiendo opcion numérica elegida.
-function fabricanteAuto(){
-    switch (auto) {
-        case 1:
-            autoMarca = "Chevrolet"
-            break;
-        case 2:
-            autoMarca = "Citroen"
-            break;
-        case 3:
-            autoMarca = "Fiat"
-            break;
-        case 4:
-            autoMarca = "Ford"
-            break;
-        case 5:
-            autoMarca = "Nissan"
-            break;
-        case 6:
-            autoMarca = "Peugeot"
-            break;
-        case 7:
-            autoMarca = "Renault"
-           break;
-        case 8:
-            autoMarca = "Toyota"
-            break;
-        default:
-            autoMarca = "Volkswagen"
-            break;
+            error();
+            tipoServicio = parseInt(prompt(`1. ${serviciosOfrecidos[0]}\n2. ${serviciosOfrecidos[1]}.`));
         }
-}
-//Nombrando servicio según sea estándar o completo.
-function obtenerTipoServicioText() {
-    if (tipoServicio === 1) {
-        return "Servicio estandar";
+        if (tipoServicio === 1) {
+            obtenerTipoServicio = "estándar";
+        } else if (tipoServicio === 2) {
+            obtenerTipoServicio = "completo";
+        }
+    } else if (eleccion == 10) {
+        alert("Consulte por privado para obtener su presupuesto\nWhatsApp: 3516517525.");
     } else {
-        return "Servicio Completo";
+        error();
     }
-}
-
-//Cálculo del valor del servicio según combustile y tipo de servicio elegído.
-function importe () {
-    if (autoCombustible === "Motor naftero" && tipoServicio === 1){
-    return precio = 25000;
-    }else if(autoCombustible === "Motor naftero" && tipoServicio === 2){
-        return precio = 50000;
-    }else if(autoCombustible === "Motor diesel" && tipoServicio === 1){
-        return precio = 35000;
-    }else {
-        return precio = 65000;
+};
+// Función para descartar la marca "Otro" y empezar a presupuestar.
+const validarCombustible = () =>{
+    let autoCombustible;
+    autoCombustible = parseInt(prompt("¿Qué combustible utiliza su auto?\n1. Nafta.\n2. Diesel."));
+    while(isNaN(autoCombustible) && autoCombustible !== 1 && autoCombustible !== 2){
+        error();
+        autoCombustible = parseInt(prompt("¿Qué combustible utiliza su auto?\n1. Nafta.\n2. Diesel."));
     }
-
-}
-
-//Plantilla de presupuesto.
-function infoServicioEstandar (){
-    alert(`El servicio estandar incluye cambio de aceite y filtros de aceite y aire. El valor estimado para su vehículo es de $${importe()}.`);
-}
-
-function infoServicioCompleto (){
-    alert(`El servicio completo incluye cambio de aceite y filtros de aceite, aire, habitáculo y combustible. El valor estimado para su vehículo es de $${importe()}.`);
-}
-
-
-//Presupuestos según tipo de combustible.
-function presupuestoNaftero (){
-    switch (tipoServicio) {
-        case 1:
-            infoServicioEstandar ();
-            break;
-        default:
-            infoServicioCompleto ();
-            break;
-}
-}
-function presupuestoDiesel (){
-    switch (tipoServicio) {
-        case 1:
-            infoServicioEstandar ();
-            break;
-        default:
-            infoServicioCompleto ();
+    if (autoCombustible === 1) {
+        autoCombustible = "Motor naftero";
+    } else if (autoCombustible === 2) {
+        autoCombustible = "Motor diesel";
+        //presupuestoDiesel();  
+    } else {
+        error();
+        validarCombustible();
     }
-}
-// Dar opciones para ingresar forma de pago.
-function formaPagoFunction (){
-    formaPago = parseInt(prompt("¿Como desea abonar el servicio?\n1-Efectivo.\n2-Tarjeta de débito o transferencia.\n3-Tarjeta de crédito."));
-}
+    obtenerTipoCombustible = autoCombustible;
+};
+// Función para mostrar los elementos que contiene el service, pasa el presupuesto según tipo de combustible y tipo de service elegído.
+const mostrarItemService = () => {
+    let itemsMensaje =`El servicio ${obtenerTipoServicio} incluye los siguientes productos:\n`;
+
+    if (obtenerTipoServicio === "estándar") {
+        itemDelServicio.splice(3, 2);
+    } 
+    itemDelServicio.forEach(item => {
+        itemsMensaje += `* ${item}.\n`;
+    });
+    alert(itemsMensaje);
+    if(obtenerTipoServicio === "estándar" && obtenerTipoCombustible === "Motor naftero"){
+        alert(`El service estándar para el motor naftero tiene un costo de $${presupuestoNafta1}.`); 
+        importe = presupuestoNafta1;  
+    } else if (obtenerTipoServicio === "completo" && obtenerTipoCombustible === "Motor naftero"){
+        alert(`El service completo para el motor naftero tiene un costo de $${presupuestoNafta2}.`);
+        importe = presupuestoNafta2;
+    } else if (obtenerTipoServicio === "estándar" && obtenerTipoCombustible === "Motor diesel"){
+        alert(`El service estándar para el motor diesel tiene un costo de $${presupuestoDiesel1}.`);
+        importe = presupuestoDiesel1;
+    } else{
+        alert(`El service estándar para el motor diesel tiene un costo de $${presupuestoDiesel2}.`);
+        importe = presupuestoDiesel2;
+    }
+};
+// Ofrecer medios de pago y dar importes.
+const mostrarFormaPago = () => {
+    let mensaje = "Medios de Pago:\n";
+    mediosDePago.forEach(medio => {
+        mensaje += `${medio.id}. ${medio.medioDePago}.\n`;
+    });
+    opcionesPago = parseInt(prompt(mensaje));
+    while(isNaN(opcionesPago) || opcionesPago >= 5 || opcionesPago <= 0){
+        error();
+        opcionesPago = parseInt(prompt(mensaje));
+    }
+    if (opcionesPago === 1){
+        alert(`Tenemos un descuento para vos! Vas a pagar: $${restarDescuento(importe, descuentoEfvo)}.`);
+    } else if (opcionesPago === 2) {
+        alert(`Podes abonar hasta en 12 cuotas!\n3 Pagos + 15%. Abonarias un total de: $${sumarRecargo(importe, 15)}.\n6 Pagos + 25%. Abonarias un total de: $${sumarRecargo(importe, 25)}.\n12 Pagos + 50%. Abonarias un total de: $${sumarRecargo(importe, 50)}.`);
+    } else if (opcionesPago === 3) {
+        alert(`Tenes un 5% de descuento con esta forma de pago, vas a abonar: $${restarDescuento(importe, descuentoDebit)}.`);
+    } else{
+        alert(`Tenes un 7% de descuento con esta forma de pago, vas a abonar: $${restarDescuento(importe, descuentoTrasnf)}.`);
+    }
+};
 //Calcular descuento.
-function restarDescuento(valor, descuento) {
+const restarDescuento = (valor, descuento)=> {
     return valor - (valor * descuento / 100);
-  }
+};
 //Calcular recargo.
-function sumarRecargo(valor, recargo) {
+const sumarRecargo= (valor, recargo) => {
     return valor + (valor * recargo / 100);
-  }
-
-
-function formaPagoNumeroTexto (){
-    switch (formaPago){
-        case 1 :
-            return "Pago en efectivo 10% de descuento.";
-        case 2: 
-            return "Pago con débito o transferencia 5% de descuento.";
-        default : 
-            return "Pago con tarjeta de crédito.";
-           
-    }
-
-}
+};

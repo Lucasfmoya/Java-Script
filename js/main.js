@@ -1,84 +1,69 @@
 //Saludo de bienvenida.
 alert("Bienvenidos a Lubricentro O'Higgins.");
-console.log("Servicio de cambio de aceite y filtros.");
-// Variables
+// Variables globales.
+let resultadoServicio = "";
 let cambioAceite;
-let precio;
-let auto;
-let autoMarca;
-let autoCombustible;
-let formaPago;
-let tipoServicio;
+let eleccion;
+let obtenerTipoServicio;
+let obtenerTipoCombustible;
+let opcionesPago;
+let importe;
+let presupuestoNafta1 = 50000;
+let presupuestoNafta2 = 65000;
+let presupuestoDiesel1 = 60000;
+let presupuestoDiesel2 = 80000;
 const descuentoEfvo = 10;
-const descuentoDebit = 5; 
-let precioFinal;
+const descuentoDebit = 5;
+const descuentoTrasnf = 7;  
+// Array que va a contener las marcas de autos.
+const marcaAutos = [];
+const serviciosOfrecidos =["Estándar","Completo"];
+const itemDelServicio = ["Aceite de motor","Filtro de aceite", "Filtro de aire","Filtro de combustible","Filtro de habitáculo"];
+const mediosDePago = [];
 
-//Primera condición para saber si el programa se va a ejecutar o cerrar.
-while (true) {
-    cambioAceite = prompt("¿Desea un presupuesto para el servicio de su vehículo?").toLowerCase();
-
-//Si es si, ejecutamos el proceso de presupuesto.    
-    if (cambioAceite === "si") {
-        marcaAuto();
-
-        while (isNaN(auto) || auto < 0 || auto > 9) {
-            error ();
-            marcaAuto();
-        }
-    //Filtramos por marca de auto.
-        if (auto >= 1 && auto <=9){
-            fabricanteAuto();
-        }else{
-            autoMarca = "Otra marca de véhiculo";
-            alert("Consulte por privado para obtener su presupuesto\nWhatsApp: 3516517525")
-        break;
-    }   
-        console.log(autoMarca);
-        //Filtramos por tipo de motor. 
-        while (autoMarca !== "Otro") {
-            autoCombustible = parseInt(prompt("¿Qué combustible utiliza su auto?\n1-Nafta.\n2-Diesel."));
-            if (autoCombustible === 1) {
-                autoCombustible = "Motor naftero";
-        
-            tipoDeServicio();
-            presupuestoNaftero();  
-            break;
-            } else if (autoCombustible === 2) {
-                autoCombustible = "Motor diesel";
-        
-            tipoDeServicio();
-            presupuestoDiesel();
-            break;
-            } else {
-                error ();
-            }
-        }
-        console.log(autoCombustible);
-        //Asignación de precio según opción elegída.
-        let precioParcial = importe();
-        console.log(`${obtenerTipoServicioText()} ${"$"}${precioParcial}`);
-        // Dar opciones para ingresar forma de pago.
-        formaPagoFunction ();
-        while (formaPago !==1 && formaPago !==2 && formaPago !==3){
-            error();
-            formaPagoFunction ();
-        }
-        if (formaPago === 1){
-            alert(`Tenemos un descuento para vos! Vas a pagar: $${restarDescuento(precioParcial, descuentoEfvo)}.`);
-        } else if (formaPago=== 2) {
-            alert(`Tenes un 5% de descuento con esta forma de pago, vas a abonar: $${restarDescuento(precioParcial, descuentoDebit)}.`);
-        } else{
-            alert(`Podes abonar hasta en 12 cuotas!\n3 Pagos + 15%. Abonarias un total de: $${sumarRecargo(precioParcial, 15)}.\n6 Pagos + 25%. Abonarias un total de: $${sumarRecargo(precioParcial, 25)}.\n12 Pagos + 50%. Abonarias un total de: $${sumarRecargo(precioParcial, 50)}.`);
-        }
-        //Convertimos la opción númerica elegída a texto.
-        formaPago = formaPagoNumeroTexto();   
-        console.log(formaPago);
-        break;
-    } else if (cambioAceite === "no") {
-        alert("¡Lo esperamos la próxima!");
-        break;
-    } else {
-        alert("Disculpa, no entendí tu respuesta. Responde si o no por favor.");
-
+// Clase constructora, para crear objetos que van a ser pusheados al array.
+class Autos {
+    constructor(marca){
+        this.marca = marca;
+    }
+};
+// Clase constructora, para crear objetos con medios de pago que van a ser pusheados al array.
+class MediosPago {
+    constructor(id, medioDePago){
+        this.id = id;
+        this.medioDePago = medioDePago;
     }
 }
+//Objetos instanciados con marcas de autos y pusheados al array.
+marcaAutos.push(new Autos("Chevrolet"));
+marcaAutos.push(new Autos("Citroen"));
+marcaAutos.push(new Autos("Fiat"));
+marcaAutos.push(new Autos("Ford"));
+marcaAutos.push(new Autos("Nissan"));
+marcaAutos.push(new Autos("Peugeot"));
+marcaAutos.push(new Autos("Renault"));
+marcaAutos.push(new Autos("Toyota"));
+marcaAutos.push(new Autos("Volkswagen"));
+marcaAutos.push(new Autos("Otro"));
+//Objetos instanciados con medios de pago y pusheados al array.
+mediosDePago.push(new MediosPago (1, "Efectivo"));
+mediosDePago.push(new MediosPago (2, "Tarjeta de Crédito"));
+mediosDePago.push(new MediosPago (3, "Tarjeta de Débito"));
+mediosDePago.push(new MediosPago (4, "Transferencia"));
+// Ejecución del programa.
+while (true) {
+    cambioAceite = prompt("¿Desea un presupuesto para el servicio de su vehículo?").toLowerCase();
+    if (cambioAceite === "si") {
+    funcionOSuperior(elegirMarca());
+    validacionAutos();
+    validarCombustible();
+    mostrarItemService();
+    mostrarFormaPago();
+    break;
+    } else if (cambioAceite === "no") {
+    alert("¡Lo esperamos la próxima!");
+    break;
+    } else {
+    alert("Disculpa, no entendí tu respuesta. Responde si o no por favor.");
+    }   
+};
