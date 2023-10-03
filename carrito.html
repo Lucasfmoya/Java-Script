@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrito de compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="container my-5 p-4">
+        <div class="row">
+            <div class="col-md-3">
+                <a class="text-decoration-none text-dark" href="./index.html">
+                    <h4 class="productos__agregados">Seguir comprando</h4>
+                </a>
+            </div>
+            <div class="col p-4 carrito">
+                <h2 class="mb-5 carrito__titulo">Carrito</h2>
+                <div class="row carrito__vacio">
+                    <div id="carrito-vacio" class="col carrito__vacio--texto">
+                        <p>Tu carrito esta vacio.</p>
+                    </div>
+                    <div id="carrito-comprado" class="col carrito__comprado">
+                        <p>Muchas gracias por su compra!!</p>
+                    </div>
+                </div>
+                <div class="row carrito__contenedor">
+                    <div id="contenedor-carrito" class="col carrito__contenedor--contenedor-carrito"></div>
+                </div>
+                <div class="row">
+                    <div id="botonesCarrito" class="col disabled ">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center">
+                                <button id="botonComprar" class="btn btn-primary h-75">
+                                    <p class="text-center">Comprar ahora</p>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <div class="row d-flex text-end">
+                                    <div class="col d-flex justify-content-around total">
+                                        <strong class="text-decoration-underline">Total:</span></strong>
+                                        <b id="sumaTotal"></b>
+                                    </div>
+                                    <div class="col">
+                                        <button id="botonVaciar" class="btn btn-danger h-75 vaciar-carrito">
+                                            <p class="text-center">Vaciar carrito</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/funcionesCarrito.js"></script>
+    <script src="./js/carrito.js"></script>
+</body>
+
+</html>
