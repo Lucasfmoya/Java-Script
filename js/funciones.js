@@ -35,6 +35,18 @@ kitCambioDeAceite.push(new KitCambio("Fiat-4", "./img/mobi.png", "Kit Service Fi
 kitCambioDeAceite.push(new KitCambio("Fiat-6", "./img/linea.png", "Kit Service Fiat Linea 1.8", "Aceite + filtro de aceite + filtro de aire", 65000, "fiat"));
 kitCambioDeAceite.push(new KitCambio("Fiat-7", "./img/palio-novo.png", "Kit Service Fiat Palio 1.4", "Aceite + filtro de aceite + filtro de aire", 50000, "fiat"));
 kitCambioDeAceite.push(new KitCambio("Fiat-8", "./img/palio.png", "Kit Service Fiat Palio/Siena 1.4 fire", "Aceite + filtro de aceite + filtro de aire", 50000, "fiat"));
+kitCambioDeAceite.push(new KitCambio("Ford-1", "./img/ka.png", "Kit Service Ford Ka 1.5", "Aceite + filtro de aceite + filtro de aire", 52000, "ford"));
+kitCambioDeAceite.push(new KitCambio("Ford-2", "./img/mondeo.png", "Kit Service Ford Mondeo 2.5", "Aceite + filtro de aceite + filtro de aire", 70000, "ford"));
+kitCambioDeAceite.push(new KitCambio("Ford-3", "./img/fiesta.png", "Kit Service Ford Fiesta 1.6", "Aceite + filtro de aceite + filtro de aire", 52000, "ford"));
+kitCambioDeAceite.push(new KitCambio("Ford-4", "./img/ecosport-1.5.png", "Kit Service Ford Ecosport 1.5", "Aceite + filtro de aceite + filtro de aire", 55000, "ford"));
+kitCambioDeAceite.push(new KitCambio("Ford-5", "./img/ranger.png", "Kit Service Ford Ranger 3.2", "Aceite + filtro de aceite + filtro de aire", 120000, "ford"));
+kitCambioDeAceite.push(new KitCambio("Ford-6", "./img/focus.png", "Kit Service Ford Focus 2.0", "Aceite + filtro de aceite + filtro de aire", 60000, "ford"));
+kitCambioDeAceite.push(new KitCambio("Nissan-1", "./img/march.png", "Kit Service Nissan March 1.6", "Aceite + filtro de aceite + filtro de aire", 48000, "nissan"));
+kitCambioDeAceite.push(new KitCambio("Nissan-2", "./img/kicks.png", "Kit Service Nissan Kicks 1.6", "Aceite + filtro de aceite + filtro de aire", 54000, "nissan"));
+kitCambioDeAceite.push(new KitCambio("Nissan-3", "./img/frontier.png", "Kit Service Frontier 2.5", "Aceite + filtro de aceite + filtro de aire", 95000, "nissan"));
+kitCambioDeAceite.push(new KitCambio("Nissan-4", "./img/note.png", "Kit Service Nissan Note 1.6", "Aceite + filtro de aceite + filtro de aire", 50000, "nissan"));
+
+
 kitCambioDeAceite.push(new KitCambio("Vw-1", "./img/gol.png", "Kit Service Gol Trend/Voyage/Suran", "Aceite + filtro de aceite + filtro de aire", 50000, "volkswagen"));
 kitCambioDeAceite.push(new KitCambio("Vw-2", "./img/polo.png", "Kit Service Suran/Polo Msi", "Aceite + filtro de aceite + filtro de aire", 65000, "volkswagen"));
 kitCambioDeAceite.push(new KitCambio("Vw-3", "./img/up.png", "Kit Service Up", "Aceite + filtro de aceite + filtro de aire", 60000, "volkswagen"));
