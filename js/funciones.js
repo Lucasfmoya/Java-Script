@@ -45,6 +45,22 @@ kitCambioDeAceite.push(new KitCambio("Nissan-1", "./img/march.png", "Kit Service
 kitCambioDeAceite.push(new KitCambio("Nissan-2", "./img/kicks.png", "Kit Service Nissan Kicks 1.6", "Aceite + filtro de aceite + filtro de aire", 54000, "nissan"));
 kitCambioDeAceite.push(new KitCambio("Nissan-3", "./img/frontier.png", "Kit Service Frontier 2.5", "Aceite + filtro de aceite + filtro de aire", 95000, "nissan"));
 kitCambioDeAceite.push(new KitCambio("Nissan-4", "./img/note.png", "Kit Service Nissan Note 1.6", "Aceite + filtro de aceite + filtro de aire", 50000, "nissan"));
+kitCambioDeAceite.push(new KitCambio("Peugeot-1", "./img/208.png", "Kit Service Peugeot 208 1.5", "Aceite + filtro de aceite + filtro de aire", 45000, "peugeot"));
+kitCambioDeAceite.push(new KitCambio("Peugeot-2", "./img/308.png", "Kit Service Peugeot 308 1.6", "Aceite + filtro de aceite + filtro de aire", 46500, "peugeot"));
+kitCambioDeAceite.push(new KitCambio("Peugeot-3", "./img/408.png", "Kit Service Peugeot 408 1.6", "Aceite + filtro de aceite + filtro de aire", 47500, "peugeot"));
+kitCambioDeAceite.push(new KitCambio("Peugeot-4", "./img/2008.png", "Kit Service Peugeot 2008 1.6", "Aceite + filtro de aceite + filtro de aire", 45000, "peugeot"));
+kitCambioDeAceite.push(new KitCambio("Peugeot-5", "./img/301.png", "Kit Service Peugeot 301 1.6 THP", "Aceite + filtro de aceite + filtro de aire", 65000, "peugeot"));
+kitCambioDeAceite.push(new KitCambio("Peugeot-6", "./img/partner.png", "Kit Service Partner 1.6 HDI", "Aceite + filtro de aceite + filtro de aire", 60000, "peugeot"));
+kitCambioDeAceite.push(new KitCambio("Renault-1", "./img/kwid.png", "Kit Service Renault Kwid 1.0", "Aceite + filtro de aceite + filtro de aire", 35000, "renault"));
+kitCambioDeAceite.push(new KitCambio("Renault-2", "./img/logan.png", "Kit Service Renault Logan 1.6 8v", "Aceite + filtro de aceite + filtro de aire", 40000, "renault"));
+kitCambioDeAceite.push(new KitCambio("Renault-3", "./img/clio.png", "Kit Service Renault Clio Mio 1.2", "Aceite + filtro de aceite + filtro de aire", 38000, "renault"));  
+kitCambioDeAceite.push(new KitCambio("Renault-4", "./img/sandero.png", "Kit Service Renault Sandero 1.6 16v", "Aceite + filtro de aceite + filtro de aire", 45000, "renault"));
+kitCambioDeAceite.push(new KitCambio("Renault-5", "./img/duster.png", "Kit Service Renault Duster 2.0", "Aceite + filtro de aceite + filtro de aire", 60000, "renault"));
+kitCambioDeAceite.push(new KitCambio("Renault-6", "./img/captur.png", "Kit Service Renault Captur 2.5", "Aceite + filtro de aceite + filtro de aire", 65000, "renault"));
+kitCambioDeAceite.push(new KitCambio("Toyota-1", "./img/hilux.png", "Kit Service Toyota Hilux 2.8", "Aceite + filtro de aceite + filtro de aire", 98000, "toyota"));
+kitCambioDeAceite.push(new KitCambio("Toyota-2", "./img/corolla.png", "Kit Service Toyota Corolla 1.8", "Aceite + filtro de aceite + filtro de aire", 65000, "toyota"));
+kitCambioDeAceite.push(new KitCambio("Toyota-3", "./img/etios.png", "Kit Service Toyota Etios 1.5", "Aceite + filtro de aceite + filtro de aire", 60000, "toyota"));
+kitCambioDeAceite.push(new KitCambio("Toyota-4", "./img/yaris.png", "Kit Service Toyota Yaris 1.5", "Aceite + filtro de aceite + filtro de aire", 60000, "toyota"));
 
 
 kitCambioDeAceite.push(new KitCambio("Vw-1", "./img/gol.png", "Kit Service Gol Trend/Voyage/Suran", "Aceite + filtro de aceite + filtro de aire", 50000, "volkswagen"));
@@ -154,5 +170,6 @@ const botonesPorMarca = () => {
         });
     });
 };
+
 
 

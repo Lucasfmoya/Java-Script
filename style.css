@@ -39,7 +39,7 @@
     
 }
 
-.disabled{
+.disabled{  
     display: none;
 }
 .total{
@@ -50,4 +50,10 @@
 .vaciar-carrito{
     position: relative;
     right: 20px;
+}
+
+.img-logo{
+    height: 80px;
+    background-color: white;
+    border-radius: 100%;
 }
