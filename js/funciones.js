@@ -127,14 +127,14 @@ const cargarKits = (marcaSeleccionada) => {
     marcaSeleccionada.forEach(kit => {
 
         kitPorMarcas.innerHTML += `
-        <div class="col-md-3 mt-5 tarjetas">
+        <div class="col-md-3 tarjetas">
             <div class="row">
                 <div class="col">
                     <img src="${kit.imagen}" class="img-fluid imagen__auto" alt="${kit.descripcion}">
                 </div>
             </div>
             <div class="row">
-                <div class="col d-flex flex-column justify-content-between">
+                <div class="col col-xs-12 d-flex flex-column justify-content-between">
                     <h5 class="">${kit.nombre}</h5>
                     <p class="text">${kit.descripcion}</p>
                     <h6>$${kit.precio}</h6>
