@@ -105,3 +105,10 @@ const comprarCarrito = ()=> {
       carritoComprado.classList.remove("disabled");
 };
 botonComprar.addEventListener("click",comprarCarrito);
+
+const navBar = () => {
+    const navbar = document.querySelector(".nav-bar");
+    navbar.classList.toggle("sticky-top", window.scrollY > 0);
+
+} 
+window.addEventListener("scroll", navBar);

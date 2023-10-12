@@ -53,7 +53,26 @@
 }
 
 .img-logo{
-    height: 80px;
-    background-color: white;
     border-radius: 100%;
+    margin-left: 50px;
+}
+
+section.sticky-top{
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+}
+section.sticky-top .navbar-brand img {
+    max-height: 45px;
+    margin-left: 100px;
+    
+}
+
+section.sticky-top .form-control {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+section.sticky-top .btn {
+    font-size: 14px;
+    margin-bottom: 20px;
 }

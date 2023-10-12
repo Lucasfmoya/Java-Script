@@ -11,36 +11,34 @@
 </head>
 
 <body>
-    <section class="sticky-top">
-        <nav class="navbar bg-dark">
+    <section class="nav-bar">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand"><img class="img-logo" src="./img/logo.png" alt="Grupo O'Higgins"></a>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-              </form>
-            </div>
-        </nav>
-    </section>
-    <section class="container py-5 text-black">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12 d-flex justify-content-end">
-                <a href="./index.html"><img class="img-fluid img__cambio" src="https://idfoil2.com/img/cms/3.png"
-                        alt="cambio de aceite y filtros"></a>
-            </div>
-            <div
-                class="col-md-6 col-sm-6 col-xs-12 titular d-flex flex-column justify-content-center align-items-start">
-                <h1 class="titular__h1 text-center">REALIZAMOS</h1>
-                <h2 class="titular__h2 text-center">+ SERVICIOS</h2>
-                <ul class="p-0">
-                    <li>Cambio de aceite y filtros </li>
-                    <li>Trabajamos con vehículos nacionales e importado</li>
-                    <li>Revisión completa de los fluíidos</li>
-                    <li>Inspeccion avanzada de fluídos en cajas y diferenciales</li>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="./index.html"><img class="img-logo" src="./img/logo-lubri.png" alt="Grupo O'Higgins"></a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Incio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./productos.html">Nuestros productos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li>
                 </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                  </form>
+              </div>
             </div>
-        </div>
+          </nav>
     </section>
+    
     <section class="container">
         <div class="row">
             <div id="titulo" class="col d-flex justify-content-center text-center">

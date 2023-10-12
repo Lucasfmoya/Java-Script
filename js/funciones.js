@@ -172,4 +172,13 @@ const botonesPorMarca = () => {
 };
 
 
+const navBar = () => {
+    const navbar = document.querySelector(".nav-bar");
+    navbar.classList.toggle("sticky-top", window.scrollY > 0);
 
+} 
+window.addEventListener("scroll", navBar);
+
+
+
+  
