@@ -1,7 +1,0 @@
-navBar();
-sumaFinal();
-cargarProductosAlCarrito();
-
-
-
-
