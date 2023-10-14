@@ -8,7 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Incio</title>
+    <title>Otras marcas</title>
 </head>
 
 <body>
@@ -33,48 +33,39 @@
                             <a class="nav-link" href="./productos.html">Nuestros productos</a>
                         </li>
                     </ul>
+                    <div id="div-carrito" class="text-center mx-4">
+                        <a href="./carrito.html" class="btn btn-primary position-relative icono-carrito">
+                            <i class='bx bx-cart'>
+                                <span id="carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                    <span class="visually-hidden"></span>
+                                  </span>
+                            </i>
+                        </a>
+                    </div>
                     <form id="buscador" class="d-flex" role="search">
                         <input id="inputSearch" class="form-control me-2" type="search" placeholder="Buscar"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
                 </div>
-                <div id="div-carrito" class="text-center mx-4">
-                    <a href="./carrito.html" class="btn btn-primary btn-carrito position-relative">
-                        <i class='bx bx-cart bx-xs'>
-                            <span id="carrito"
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                0
-                                <span class="visually-hidden"></span>
-                            </span>
-                        </i>
-                    </a>
-                </div>
             </div>
         </nav>
     </section>
-    <section class="container-fluid background">
-        <div class="texto-imagen">
-            <p class="texto-principal"><span class="span">Somos una empresa dedicada al servicio y mantenimiento de autos.</span><br>Contamos con más de 10 años de experiencia en el rubro</br></p>
-            <button class="btn btn-primary boton-principal text-center"><a href="./productos.html" class="text-decoration-none text-white text-center comprar-ahora">Comprar ahora</a></button>
-        </div>
-    </section>
-    <section class="container my-2 text-black">
+    
+    <section class="container">
         <div class="row">
-            <div class="col-md-7 col-sm-7 col-xs-12 d-flex justify-content-end">
-                <img class="img-fluid img__cambio" src="https://idfoil2.com/img/cms/3.png"
-                    alt="cambio de aceite y filtros">
-            </div>
-            <div
-                class="col-md-5 col-sm-5 col-xs-12 titular d-flex flex-column justify-content-center align-items-start">
-                <h1 class="titular__h1 text-center">REALIZAMOS</h1>
-                <h2 class="titular__h2 text-center">+ SERVICIOS</h2>
-                <ul class="p-0">
-                    <li>Cambio de aceite y filtros </li>
-                    <li>Trabajamos con vehículos nacionales e importado</li>
-                    <li>Revisión completa de los fluíidos</li>
-                    <li>Inspeccion avanzada de fluídos en cajas y diferenciales</li>
-                </ul>
+            <div id="titulo" class="col d-flex justify-content-center flex-column text-center my-5">
+                <div class="d-flex justify-content-center">
+                    <div class="alert alert-info w-75" role="alert">
+                        <p>Lo sentimos, para obtener un presupuesto para su vehículo pongase en contacto con nosotros.</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-info"><a class="text-decoration-none text-white" href="./index.html">Volver</a>
+                    </button>
+                    <a href="https://api.whatsapp.com/send?phone=+543516517525&text=Hola+Lubricentro+O%27Higgins%2C+quisiera+solicitar+un+presupuesto+para+el+cambio+de+aceite+y+filtros+de+mi+veh%C3%ADculo." target="_blanck"><i class='bx bxl-whatsapp bx-md ms-4' style='color:#25d366'></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -85,6 +76,6 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="js/funciones.js"></script>
-<script src="js/main.js"></script>
+<script src="js/otras-marcas.js"></script>
 
 </html>

@@ -1,0 +1,3 @@
+navBar();
+validarCarrito();
+cantidadEnCarrito();

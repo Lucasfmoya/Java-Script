@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrito de compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="nav-bar">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="./index.html"><img class="img-logo" src="./img/logo-lubri.png"
+                            alt="Grupo O'Higgins"></a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./productos.html">Nuestros productos</a>
+                        </li>
+                    </ul>
+                    <form id="buscador" class="d-flex" role="search">
+                        <input id="inputSearch" class="form-control me-2" type="search" placeholder="Buscar"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section class="container my-5 p-4">
+        <div class="row">
+            <div class="col carrito">
+                <h2 class="mb-5 carrito__titulo">Carrito</h2>
+                <div class="row carrito__vacio">
+                    <div id="carrito-vacio" class=" col alert alert-warning text-center carrito__vacio--texto" role="alert">
+                        <p>Tu carrito esta vacio.</p>
+                    </div>
+                    <div id="carrito-comprado" class="col alert text-center alert-success carrito__comprado">
+                        <p>Muchas gracias por su compra!!</p>
+                    </div>
+                </div>
+                <div class="row carrito__contenedor">
+                    <div id="contenedor-carrito" class="col carrito__contenedor--contenedor-carrito"></div>
+                </div>
+                <div class="row mt-5">
+                    <div id="botonesCarrito" class="col disabled">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center">
+                                <button id="botonComprar" class="btn btn-primary h-75">
+                                    <p class="text-center">Comprar ahora</p>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <div class="row d-flex text-end">
+                                    <div class="col">
+                                        <button id="botonVaciar" class="btn btn-danger h-75 vaciar-carrito">
+                                            <p class="text-center">Vaciar carrito</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <button class="btn btn-secondary">
+                    <a class="text-decoration-none" href="./index.html">
+                        <h4 class="text-white">Seguir comprando</h4>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/funcionesCarrito.js"></script>
+    <script src="./js/carrito.js"></script>
+</body>
+
+</html>

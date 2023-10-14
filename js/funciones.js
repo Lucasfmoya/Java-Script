@@ -1,123 +1,143 @@
-// Función error, colocar dentro de otro archivo
-const error = () => {
-    alert("Ingrese una opción válida.");
-};
-// Función que recibe a otra función como parámetro. 
-const funcionOSuperior = (i) => {
-    eleccion = parseInt(prompt(i));
-};
-// Función para elegir la marca del auto.
-const elegirMarca = () => {
-    let opciones;
-    opciones = "¿Qué vehículo posee?\n";
-    marcaAutos.forEach((auto, i) => {
-        opciones += `${i + 1}. ${auto.marca}\n`;
-    });
-    return opciones;
-};
- // Función para validar si el número ingresado es una opción válida.
- const validacionAutos = () => {
-    while (isNaN(eleccion) || eleccion == 0 || eleccion > 10) {
-        error();
-        eleccion = parseInt(prompt(elegirMarca()));
-    }
-    if (eleccion >= 1 && eleccion < 10) {
-        let tipoServicio;
-        tipoServicio = parseInt(prompt(`1. ${serviciosOfrecidos[0]}.\n2. ${serviciosOfrecidos[1]}.`));
-        while (tipoServicio !== 1 && tipoServicio !== 2) {
-            error();
-            tipoServicio = parseInt(prompt(`1. ${serviciosOfrecidos[0]}\n2. ${serviciosOfrecidos[1]}.`));
-        }
-        if (tipoServicio === 1) {
-            obtenerTipoServicio = "estándar";
-        } else if (tipoServicio === 2) {
-            obtenerTipoServicio = "completo";
-        }
-    } else if (eleccion == 10) {
-        alert("Consulte por privado para obtener su presupuesto\nWhatsApp: 3516517525.");
-    } else {
-        error();
-    }
-};
-// Función para descartar la marca "Otro" y empezar a presupuestar.
-const validarCombustible = () =>{
-    let autoCombustible;
-    autoCombustible = parseInt(prompt("¿Qué combustible utiliza su auto?\n1. Nafta.\n2. Diesel."));
-    while(isNaN(autoCombustible) && autoCombustible !== 1 && autoCombustible !== 2){
-        error();
-        autoCombustible = parseInt(prompt("¿Qué combustible utiliza su auto?\n1. Nafta.\n2. Diesel."));
-    }
-    if (autoCombustible === 1) {
-        autoCombustible = "Motor naftero";
-    } else if (autoCombustible === 2) {
-        autoCombustible = "Motor diesel";
-    } else {
-        error();
-        validarCombustible();
-    }
-    obtenerTipoCombustible = autoCombustible;
-};
-// Función para mostrar los elementos que contiene el service, pasa el presupuesto según tipo de combustible y tipo de service elegído.
-const mostrarItemService = () => {
-    let itemsMensaje =`El servicio ${obtenerTipoServicio} incluye los siguientes productos:\n`;
+// Array que va a contener los productos del fetch;
+let kitCambioDeAceite = [];
 
-    if (obtenerTipoServicio === "estándar") {
-        itemDelServicio.splice(3, 2);
-    } 
-    itemDelServicio.forEach(item => {
-        itemsMensaje += `* ${item}.\n`;
+fetch("./json/kitCambioDeAceite.json")
+    .then(response => response.json())
+    .then(data => {
+        kitCambioDeAceite = data;
+        cargarKits(kitCambioDeAceite);
+
+        // Local storage de todos los productos de la página;
+        localStorage.setItem("todos-los-productos", JSON.stringify(kitCambioDeAceite));
     });
-    alert(itemsMensaje);
-    if(obtenerTipoServicio === "estándar" && obtenerTipoCombustible === "Motor naftero"){
-        alert(`El service estándar para el motor naftero tiene un costo de $${presupuestoNafta1}.`); 
-        importe = presupuestoNafta1;  
-    } else if (obtenerTipoServicio === "completo" && obtenerTipoCombustible === "Motor naftero"){
-        alert(`El service completo para el motor naftero tiene un costo de $${presupuestoNafta2}.`);
-        importe = presupuestoNafta2;
-    } else if (obtenerTipoServicio === "estándar" && obtenerTipoCombustible === "Motor diesel"){
-        alert(`El service estándar para el motor diesel tiene un costo de $${presupuestoDiesel1}.`);
-        importe = presupuestoDiesel1;
-    } else{
-        alert(`El service estándar para el motor diesel tiene un costo de $${presupuestoDiesel2}.`);
-        importe = presupuestoDiesel2;
-    }
-};
-// Ofrecer medios de pago y dar importes.
-const mostrarFormaPago = () => {
-    let mensaje = "Medios de Pago:\n";
-    mediosDePago.forEach(medio => {
-        mensaje += `${medio.id}. ${medio.medioDePago}.\n`;
-    });
-    opcionesPago = parseInt(prompt(mensaje));
-    while(isNaN(opcionesPago) || opcionesPago >= 5 || opcionesPago <= 0){
-        error();
-        opcionesPago = parseInt(prompt(mensaje));
-    }
-    if (opcionesPago === 1){
-        alert(`Tenemos un descuento para vos! Vas a pagar: $${restarDescuento(importe, descuentoEfvo)}.`);
-    } else if (opcionesPago === 2) {
-        alert(`Podes abonar hasta en 12 cuotas!\n3 Pagos + 15%. Abonarias un total de: $${sumarRecargo(importe, 15)}.\n6 Pagos + 25%. Abonarias un total de: $${sumarRecargo(importe, 25)}.\n12 Pagos + 50%. Abonarias un total de: $${sumarRecargo(importe, 50)}.`);
-    } else if (opcionesPago === 3) {
-        alert(`Tenes un 5% de descuento con esta forma de pago, vas a abonar: $${restarDescuento(importe, descuentoDebit)}.`);
-    } else{
-        alert(`Tenes un 7% de descuento con esta forma de pago, vas a abonar: $${restarDescuento(importe, descuentoTrasnf)}.`);
+
+
+// Obteniendo elementos del html y creando algunas variables necesarias;
+const botonesPorMarcas = document.querySelectorAll(".botones__marcas")
+const kitPorMarcas = document.querySelector("#kitPorMarcas");
+const titulo = document.querySelector("#titulo");
+const carrito = document.querySelector("#carrito");
+let botonAgregar;
+let productosCarrito;
+let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
+
+// Función para validar si existen items en el carrito;
+const validarCarrito = () => {
+    if (productosEnCarritoLS) {
+        productosCarrito = JSON.parse(productosEnCarritoLS);
+    } else {
+        productosCarrito = [];
     }
 };
 
-// Validar si el programa va a ejecutarse.
-const validacionDeEjecucion = () =>{
-    while(eleccion !== 10){
-        validarCombustible();
-        mostrarItemService();
-        mostrarFormaPago();
-        break;
-    }
-} 
-//Calcular descuento.
-const restarDescuento = (valor, descuento)=> {
-    return valor - (valor * descuento / 100);
+// Función para pasar a mayúscula la primer letra de una palabra;
+const cambiarPrimerLetra = (palabra) => {
+    return `${palabra[0].toUpperCase()}${palabra.slice(1)} `
+}
+// Creando botónes para que agreguen el producuto al carrito;
+const botonParaAgregar = () => {
+    botonAgregar = document.querySelectorAll(".botonCarrito");
+    botonAgregar.forEach(boton => {
+        boton.addEventListener("click", agregarAlCarrito);
+
+    });
+}
+// Agregamos el producto al carrito al hacer click en el botón, si es la primera vez que lo agregamos se pusheea y sino se van sumando las cantidades;
+const agregarAlCarrito = (e) => {
+    const idBoton = e.currentTarget.id;
+    const kitAgregado = kitCambioDeAceite.find(kit => kit.id === idBoton);
+
+    const kitEnCarrito = productosCarrito.find(kit => kit.id === idBoton);
+    kitEnCarrito ? kitEnCarrito.cantidad++ : (kitAgregado.cantidad = 1, productosCarrito.push(kitAgregado));
+    Toastify({
+        text: "Producto agregado",
+        duration: 1000,
+        destination: "./carrito.html",
+        newWindow: false,
+        close: true,
+        gravity: "top",
+        position: "right",
+        style: {
+            background: "linear-gradient(to top, #00c6fb 0%, #005bea 100%)",
+            borderRadius: "3rem",
+            fontWeight: 600,
+        },
+        offset: {
+            y: "3rem"
+        }
+    }).showToast();
+    cantidadEnCarrito();
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosCarrito));
 };
-//Calcular recargo.
-const sumarRecargo= (valor, recargo) => {
-    return valor + (valor * recargo / 100);
+
+// Actualizamos la cantidad de productos en el carrito;
+const cantidadEnCarrito = () => {
+    let cantidad = productosCarrito.reduce((acumulador, kit) => acumulador + kit.cantidad, 0);
+
+    carrito.innerHTML = cantidad;
+
+}
+// Render de productos filtrados por marca seleccionada;
+const cargarKits = (marcaSeleccionada) => {
+    kitPorMarcas.innerHTML = "";
+    marcaSeleccionada.forEach(kit => {
+
+        kitPorMarcas.innerHTML += `
+        <div class="col-md-3 tarjetas">
+            <div class="row">
+                <div class="col">
+                    <img src="${kit.imagen}" class="img-fluid imagen__auto" alt="${kit.descripcion}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-xs-12 d-flex flex-column justify-content-between">
+                    <h5 class="">${kit.nombre}</h5>
+                    <p class="text">${kit.descripcion}</p>
+                    <h6>$${kit.precio}</h6>
+                    <button id="${kit.id}" class="btn btn-primary botonCarrito">Agregar</button>
+                </div>
+            </div>
+        </div>
+        `
+    });
+    botonParaAgregar();
 };
+// Creando función para filtrar por marcas;
+const botonesPorMarca = () => {
+    botonesPorMarcas.forEach(boton => {
+        boton.addEventListener("click", (e) => {
+            botonesPorMarcas.forEach(boton => boton.classList.remove("active"));
+            e.currentTarget.classList.add("active");
+
+            const marcaId = e.currentTarget.id;
+            titulo.innerHTML = marcaId !== "todasLasMarcas" && marcaId !== "otrasMarcas"
+                ? `<h3>${cambiarPrimerLetra(marcaId)}</h3>`
+                : marcaId === "otrasMarcas"
+                    ? `<h3>Otras marcas...</h3>`
+                    : `<h3>Todos los kits</h3>`;
+
+            const marcaSeleccionada = marcaId !== "todasLasMarcas" && marcaId !== "otrasMarcas"
+                ? kitCambioDeAceite.filter(kit => kit.marca === marcaId)
+                : marcaId === "otrasMarcas"
+                    ? []
+                    : kitCambioDeAceite;
+
+            cargarKits(marcaSeleccionada);
+        });
+    });
+};
+
+// Navbar con tamaño diferente al hacer scroll;
+const navBar = () => {
+    const navbar = document.querySelector(".nav-bar");
+    navbar.classList.toggle("sticky-top", window.scrollY > 0);
+    const divCarrito = document.querySelector("#div-carrito");
+    divCarrito.classList.toggle("mt-3", window.scrollY > 0);
+    const buscador = document.querySelector("#buscador");
+    buscador.classList.toggle("mt-3", window.scrollY > 0);
+    window.addEventListener("scroll", navBar);
+
+}
+
+
+
