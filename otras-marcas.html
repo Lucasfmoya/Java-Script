@@ -14,29 +14,40 @@
     <section class="nav-bar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="./index.html"><img class="img-logo" src="./img/logo-lubri.png" alt="Grupo O'Higgins"></a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Incio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./productos.html">Nuestros productos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                  </form>
-              </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="./index.html"><img class="img-logo" src="./img/logo-lubri.png"
+                            alt="Grupo O'Higgins"></a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./productos.html">Nuestros productos</a>
+                        </li>
+                    </ul>
+                    <div id="div-carrito" class="text-center mx-4">
+                        <a href="./carrito.html" class="btn btn-primary position-relative icono-carrito">
+                            <i class='bx bx-cart'>
+                                <span id="carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                    <span class="visually-hidden"></span>
+                                  </span>
+                            </i>
+                        </a>
+                    </div>
+                    <form id="buscador" class="d-flex" role="search">
+                        <input id="inputSearch" class="form-control me-2" type="search" placeholder="Buscar"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
             </div>
-          </nav>
+        </nav>
     </section>
     
     <section class="container">
@@ -61,6 +72,6 @@
     crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/funciones.js"></script>
-<script src="js/main.js"></script>
+<script src="js/otras-marcas.js"></script>
 
 </html>

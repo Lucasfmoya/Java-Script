@@ -1,4 +1,7 @@
+navBar();
+sumaFinal();
 cargarProductosAlCarrito();
+
 
 
 

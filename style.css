@@ -27,10 +27,7 @@
     
 }
   
-  
-.productos__agregados:hover {
-    color: #0d6efd;
-}
+
 
 .imagen__carrito{
     height: 48px;
@@ -76,3 +73,5 @@ section.sticky-top .btn {
     font-size: 14px;
     margin-bottom: 20px;
 }
+
+

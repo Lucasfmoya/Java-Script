@@ -171,14 +171,17 @@ const botonesPorMarca = () => {
     });
 };
 
-
+// Navbar con tamaño diferente al hacer scroll;
 const navBar = () => {
     const navbar = document.querySelector(".nav-bar");
     navbar.classList.toggle("sticky-top", window.scrollY > 0);
+    const divCarrito = document.querySelector("#div-carrito");
+    divCarrito.classList.toggle("mt-3", window.scrollY > 0);
+    const buscador = document.querySelector("#buscador");
+    buscador.classList.toggle("mt-3", window.scrollY > 0);
+    window.addEventListener("scroll", navBar);
 
 } 
-window.addEventListener("scroll", navBar);
 
 
 
-  
