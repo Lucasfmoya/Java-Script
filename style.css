@@ -26,38 +26,9 @@
     text-align: center;
     
 }
+  
 
-.background{    
-    height: 400px;
-    background-image: url(./img/cambio-aceite.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-}
 
-.texto-imagen{
-    position: relative;
-    padding: 10px;
-}
-.span{
-    color: #0d6efd;
-    font-size: 1.7rem;
-}
-.texto-principal{
-    position: absolute;
-    top: 35px;
-    left: 250px;
-    font-size: 1.5rem;
-    color: black;
-    font-weight: 600;
-    width: 400px;
-
-}
-.boton-principal{
-    position: absolute;
-    top: 250px;
-    left: 350px;
-}
 .imagen__carrito{
     height: 48px;
     width: 70px;
@@ -104,56 +75,3 @@ section.sticky-top .btn {
 }
 
 
-@media (min-width: 300px) and (max-width: 767px) {
-
-    .texto-imagen{
-        position: relative;
-        padding: 10px;
-    }
-    .span{
-        color: #0d6efd;
-        font-size: 1.2rem;
-    }
-    .texto-principal{
-        top: 25px;
-        left: 5px;
-        font-size: 0.8rem;
-        width: 120px;
-    
-    }
-
-    .boton-principal{
-        height: 40px;
-        top: 300px;
-        left: 20px;
-    }
-    .comprar-ahora{
-        font-size: 0.8rem;
-    }
-    .img-collapse{
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .img-logo{
-        margin: 0;
-        margin-top: 10px;
-        max-width: 250px;
-        
-    }
-    section.sticky-top .navbar-brand img {
-        max-height: 50px;
-        margin: 0px;
-        
-    }
-    
-    #div-carrito{
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        margin: 0;
-        
-        
-    }
-}

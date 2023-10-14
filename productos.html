@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Productos</title>
+    <title>Js- Lucas Moya</title>
 </head>
 
 <body>
@@ -21,50 +20,23 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <div class="img-collapse">
-                        <a class="navbar-brand mx-0" href="./index.html"><img class="img-logo" src="./img/logo-lubri.png"
-                                alt="Grupo O'Higgins"></a>
-                    </div>
+                    <a class="navbar-brand" href="./index.html"><img class="img-logo" src="./img/logo-lubri.png"
+                            alt="Grupo O'Higgins"></a>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Marcas de vehículos
-                            </a>
-                            <ul class="dropdown-menu">
-                                <ul id="listaMarcas" class="text-start p-2 botones">
-                                    <li><button id="todasLasMarcas" class="btn text-dark botones__marcas">Todas las
-                                            marcas</button></li>
-                                    <li><button id="chevrolet" class="btn text-dark botones__marcas">Chevrolet</button>
-                                    </li>
-                                    <li><button id="citroen" class="btn text-dark botones__marcas">Citroen</button></li>
-                                    <li><button id="fiat" class="btn text-dark botones__marcas">Fiat</button></li>
-                                    <li><button id="ford" class="btn text-dark botones__marcas">Ford</button></li>
-                                    <li><button id="nissan" class="btn text-dark botones__marcas">Nissan</button></li>
-                                    <li><button id="peugeot" class="btn text-dark botones__marcas">Peugeot</button></li>
-                                    <li><button id="renault" class="btn text-dark botones__marcas">Renault</button></li>
-                                    <li><button id="toyota" class="btn text-dark botones__marcas">Toyota</button></li>
-                                    <li><button id="volkswagen"
-                                            class="btn text-dark botones__marcas">Volkswagen</button></li>
-                                    <li><button id="otrasMarcas" class="btn"><a href="./otras-marcas.html"
-                                                class="text-decoration-none text-dark botones__marcas">Otras
-                                                marcas</a></button>
-                                    </li>
-                                </ul>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./productos.html">Nuestros productos</a>
                         </li>
                     </ul>
                     <div id="div-carrito" class="text-center mx-4">
                         <a href="./carrito.html" class="btn btn-primary position-relative icono-carrito">
                             <i class='bx bx-cart'>
-                                <span id="carrito"
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <span id="carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                     0
                                     <span class="visually-hidden"></span>
-                                </span>
+                                  </span>
                             </i>
                         </a>
                     </div>
@@ -79,17 +51,39 @@
     </section>
     <section class="container">
         <div class="row">
-            <div class="col">
+            <div id="marcasDeVehiculos" class="col-md-3 col-sm-12">
+                <div class="row div-marcas">
+                    <div class="col my-5">
+                        <h4 class="my-3">Marca de vehículos</h4>
+                        <ul id="listaMarcas" class="text-start p-2 botones">
+                            <li><button id="todasLasMarcas" class="btn text-dark botones__marcas">Todas las
+                                    marcas</button></li>
+                            <li><button id="chevrolet" class="btn text-dark botones__marcas">Chevrolet</button></li>
+                            <li><button id="citroen" class="btn text-dark botones__marcas">Citroen</button></li>
+                            <li><button id="fiat" class="btn text-dark botones__marcas">Fiat</button></li>
+                            <li><button id="ford" class="btn text-dark botones__marcas">Ford</button></li>
+                            <li><button id="nissan" class="btn text-dark botones__marcas">Nissan</button></li>
+                            <li><button id="peugeot" class="btn text-dark botones__marcas">Peugeot</button></li>
+                            <li><button id="renault" class="btn text-dark botones__marcas">Renault</button></li>
+                            <li><button id="toyota" class="btn text-dark botones__marcas">Toyota</button></li>
+                            <li><button id="volkswagen" class="btn text-dark botones__marcas">Volkswagen</button></li>
+                            <li><button id="otrasMarcas" class="btn"><a href="./otras-marcas.html" class="text-decoration-none text-dark botones__marcas">Otras marcas</a></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12 col-xs-12 d-flex flex-wrap">
                 <div class="row my-5">
-                    <div id="titulo" class="col d-flex justify-content-start mx-5">
-                        <h3 class="text-dark my-1 px-4 mb-5">Todos los kits</h3>
+                    <div id="titulo" class="col">
+                        <h3 class="text-dark my-5 mb-5">Todos los kits</h3>
                     </div>
                 </div>
                 <div class="row">
                     <div id="kitPorMarcas" class="col d-flex flex-wrap justify-content-center"></div>
                 </div>
             </div>
-        </div>
+        </div> 
     </section>
 
 
@@ -98,7 +92,6 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="js/funciones.js"></script>
 <script src="js/main.js"></script>
 
