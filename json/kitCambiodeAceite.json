@@ -1,0 +1,410 @@
+[
+    {
+        "id": "Chevrolet-1",
+        "imagen": "./img/prisma.png",
+        "nombre": "Kit Service Chevrolet Onix/Prisma 1.4",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 50000,
+        "marca": "chevrolet"
+    },
+    {
+        "id": "Chevrolet-2",
+        "imagen": "./img/cruze.png",
+        "nombre": "Kit Service Chevrolet Cruze 1.4",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 60000,
+        "marca": "chevrolet"
+    },
+    {
+        "id": "Chevrolet-3",
+        "imagen": "./img/tracker.png",
+        "nombre": "Kit Service Chevrolet Tracker 1.8",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 75000,
+        "marca": "chevrolet"
+    },
+    {
+        "id": "Chevrolet-4",
+        "imagen": "./img/corsa.png",
+        "nombre": "Kit Service Chevrolet Corsa Classic 1.4 / 1.6",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 50000,
+        "marca": "chevrolet"
+    },
+    {
+        "id": "Chevrolet-5",
+        "imagen": "./img/spin.png",
+        "nombre": "Kit Service Chevrolet Spin 1.4",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 50000,
+        "marca": "chevrolet"
+    },
+    {
+        "id": "Chevrolet-6",
+        "imagen": "./img/celta.png",
+        "nombre": "Kit Service Chevrolet Celta 1.4 / 1.6",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 50000,
+        "marca": "chevrolet"
+    },
+    {
+        "id": "Chevrolet-7",
+        "imagen": "./img/s10.png",
+        "nombre": "Kit Service Chevrolet S-10 2.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 85000,
+        "marca": "chevrolet"
+    },
+    {
+        "id": "Chevrolet-8",
+        "imagen": "./img/sonic.png",
+        "nombre": "Kit Service Chevrolet Sonic 1.8",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 70000,
+        "marca": "chevrolet"
+    },
+    {
+        "id": "Citroen-1",
+        "imagen": "./img/c3.png",
+        "nombre": "Kit Service Citroen C3 1.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 65000,
+        "marca": "citroen"
+    },
+    {
+        "id": "Citroen-2",
+        "imagen": "./img/c-elysse.png",
+        "nombre": "Kit Service Citroen C-Elysse 1.6 Thp",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 85000,
+        "marca": "citroen"
+    },
+    {
+        "id": "Citroen-3",
+        "imagen": "./img/cactus.png",
+        "nombre": "Kit Service Citroen Cactus 1.6 16v",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 70000,
+        "marca": "citroen"
+    },
+    {
+        "id": "Citroen-4",
+        "imagen": "./img/berlingo.png",
+        "nombre": "Kit Service Citroen Berlingo 1.6 nafta",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 65000,
+        "marca": "citroen"
+    },
+    {
+        "id": "Citroen-5",
+        "imagen": "./img/c4.png",
+        "nombre": "Kit Service Citroen C4 1.6 nafta",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 65000,
+        "marca": "citroen"
+    },
+    {
+        "id": "Citroen-6",
+        "imagen": "./img/jumpy.png",
+        "nombre": "Kit Service Citroen Jumpy 1.6 Hdi",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 80000,
+        "marca": "citroen"
+    },
+    {
+        "id": "Fiat-1",
+        "imagen": "./img/cronos.png",
+        "nombre": "Kit Service Fiat Cronos/Argo 1.3",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 55000,
+        "marca": "fiat"
+    },
+    {
+        "id": "Fiat-2",
+        "imagen": "./img/argo.png",
+        "nombre": "Kit Service Fiat Cronos/Argo 1.8",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 65000,
+        "marca": "fiat"
+    },
+    {
+        "id": "Fiat-3",
+        "imagen": "./img/toro.png",
+        "nombre": "Kit Service Fiat Toro 2.0 Diesel",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 85000,
+        "marca": "fiat"
+    },
+    {
+        "id": "Fiat-4",
+        "imagen": "./img/mobi.png",
+        "nombre": "Kit Service Fiat Mobi 1.4",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 60000,
+        "marca": "fiat"
+    },
+    {
+        "id": "Fiat-6",
+        "imagen": "./img/linea.png",
+        "nombre": "Kit Service Fiat Linea 1.8",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 65000,
+        "marca": "fiat"
+    },
+    {
+        "id": "Fiat-7",
+        "imagen": "./img/palio-novo.png",
+        "nombre": "Kit Service Fiat Palio 1.4",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 50000,
+        "marca": "fiat"
+    },
+    {
+        "id": "Fiat-8",
+        "imagen": "./img/palio.png",
+        "nombre": "Kit Service Fiat Palio/Siena 1.4 fire",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 50000,
+        "marca": "fiat"
+    },
+    {
+        "id": "Ford-1",
+        "imagen": "./img/ka.png",
+        "nombre": "Kit Service Ford Ka 1.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 52000,
+        "marca": "ford"
+    },
+    {
+        "id": "Ford-2",
+        "imagen": "./img/mondeo.png",
+        "nombre": "Kit Service Ford Mondeo 2.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 70000,
+        "marca": "ford"
+    },
+    {
+        "id": "Ford-3",
+        "imagen": "./img/fiesta.png",
+        "nombre": "Kit Service Ford Fiesta 1.6",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 52000,
+        "marca": "ford"
+    },
+    {
+        "id": "Ford-4",
+        "imagen": "./img/ecosport-1.5.png",
+        "nombre": "Kit Service Ford Ecosport 1.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 55000,
+        "marca": "ford"
+    },
+    {
+        "id": "Ford-5",
+        "imagen": "./img/ranger.png",
+        "nombre": "Kit Service Ford Ranger 3.2",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 120000,
+        "marca": "ford"
+    },
+    {
+        "id": "Ford-6",
+        "imagen": "./img/focus.png",
+        "nombre": "Kit Service Ford Focus 2.0",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 60000,
+        "marca": "ford"
+    },
+    {
+        "id": "Nissan-1",
+        "imagen": "./img/march.png",
+        "nombre": "Kit Service Nissan March 1.6",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 48000,
+        "marca": "nissan"
+    },
+    {
+        "id": "Nissan-2",
+        "imagen": "./img/kicks.png",
+        "nombre": "Kit Service Nissan Kicks 1.6",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 54000,
+        "marca": "nissan"
+    },
+    {
+        "id": "Nissan-3",
+        "imagen": "./img/frontier.png",
+        "nombre": "Kit Service Frontier 2.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 95000,
+        "marca": "nissan"
+    },
+    {
+        "id": "Nissan-4",
+        "imagen": "./img/note.png",
+        "nombre": "Kit Service Nissan Note 1.6",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 50000,
+        "marca": "nissan"
+    },
+    {
+        "id": "Peugeot-1",
+        "imagen": "./img/208.png",
+        "nombre": "Kit Service Peugeot 208 1.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 45000,
+        "marca": "peugeot"
+    },
+    {
+        "id": "Peugeot-2",
+        "imagen": "./img/308.png",
+        "nombre": "Kit Service Peugeot 308 1.6",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 46500,
+        "marca": "peugeot"
+    },
+    {
+        "id": "Peugeot-3",
+        "imagen": "./img/408.png",
+        "nombre": "Kit Service Peugeot 408 1.6",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 47500,
+        "marca": "peugeot"
+    },
+    {
+        "id": "Peugeot-4",
+        "imagen": "./img/2008.png",
+        "nombre": "Kit Service Peugeot 2008 1.6",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 45000,
+        "marca": "peugeot"
+    },
+    {
+        "id": "Peugeot-5",
+        "imagen": "./img/301.png",
+        "nombre": "Kit Service Peugeot 301 1.6 THP",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 65000,
+        "marca": "peugeot"
+    },
+    {
+        "id": "Peugeot-6",
+        "imagen": "./img/partner.png",
+        "nombre": "Kit Service Partner 1.6 HDI",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 60000,
+        "marca": "peugeot"
+    },
+    {
+        "id": "Renault-1",
+        "imagen": "./img/kwid.png",
+        "nombre": "Kit Service Renault Kwid 1.0",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 35000,
+        "marca": "renault"
+    },
+    {
+        "id": "Renault-2",
+        "imagen": "./img/logan.png",
+        "nombre": "Kit Service Renault Logan 1.6 8v",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 40000,
+        "marca": "renault"
+    },
+    {
+        "id": "Renault-3",
+        "imagen": "./img/clio.png",
+        "nombre": "Kit Service Renault Clio Mio 1.2",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 38000,
+        "marca": "renault"
+    },
+    {
+        "id": "Renault-4",
+        "imagen": "./img/sandero.png",
+        "nombre": "Kit Service Renault Sandero 1.6 16v",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 45000,
+        "marca": "renault"
+    },
+    {
+        "id": "Renault-5",
+        "imagen": "./img/duster.png",
+        "nombre": "Kit Service Renault Duster 2.0",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 60000,
+        "marca": "renault"
+    },
+    {
+        "id": "Renault-6",
+        "imagen": "./img/captur.png",
+        "nombre": "Kit Service Renault Captur 2.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 65000,
+        "marca": "renault"
+    },
+    {
+        "id": "Toyota-1",
+        "imagen": "./img/hilux.png",
+        "nombre": "Kit Service Toyota Hilux 2.8",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 98000,
+        "marca": "toyota"
+    },
+    {
+        "id": "Toyota-2",
+        "imagen": "./img/corolla.png",
+        "nombre": "Kit Service Toyota Corolla 1.8",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 65000,
+        "marca": "toyota"
+    },
+    {
+        "id": "Toyota-3",
+        "imagen": "./img/etios.png",
+        "nombre": "Kit Service Toyota Etios 1.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 60000,
+        "marca": "toyota"
+    },
+    {
+        "id": "Toyota-4",
+        "imagen": "./img/yaris.png",
+        "nombre": "Kit Service Toyota Yaris 1.5",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 60000,
+        "marca": "toyota"
+    },
+    {
+        "id": "Vw-1",
+        "imagen": "./img/gol.png",
+        "nombre": "Kit Service Gol Trend/Voyage/Suran",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 50000,
+        "marca": "volkswagen"
+    },
+    {
+        "id": "Vw-2",
+        "imagen": "./img/polo.png",
+        "nombre": "Kit Service Suran/Polo Msi",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 65000,
+        "marca": "volkswagen"
+    },
+    {
+        "id": "Vw-3",
+        "imagen": "./img/up.png",
+        "nombre": "Kit Service Up",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 60000,
+        "marca": "volkswagen"
+    },
+    {
+        "id": "Vw-4",
+        "imagen": "./img/amarok.png",
+        "nombre": "Kit Service Amarok",
+        "descripcion": "Aceite + filtro de aceite + filtro de aire",
+        "precio": 95000,
+        "marca": "volkswagen"
+    }
+]
