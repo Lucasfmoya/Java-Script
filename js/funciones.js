@@ -1,15 +1,15 @@
 // Array que va a contener los productos del fetch;
-let kitCambioDeAceite = [];
+let productos = [];
 
-fetch("./json/kitCambioDeAceite.json")
+fetch("./js/productos.json")
     .then(response => response.json())
     .then(data => {
-        kitCambioDeAceite = data;
-        cargarKits(kitCambioDeAceite);
-
+        productos = data;
+        cargarKits(productos);
+/* 
         // Local storage de todos los productos de la página;
-        localStorage.setItem("todos-los-productos", JSON.stringify(kitCambioDeAceite));
-    });
+        localStorage.setItem("todos-los-productos", JSON.stringify(productos)); */
+    })
 
 
 // Obteniendo elementos del html y creando algunas variables necesarias;
@@ -45,7 +45,7 @@ const botonParaAgregar = () => {
 // Agregamos el producto al carrito al hacer click en el botón, si es la primera vez que lo agregamos se pusheea y sino se van sumando las cantidades;
 const agregarAlCarrito = (e) => {
     const idBoton = e.currentTarget.id;
-    const kitAgregado = kitCambioDeAceite.find(kit => kit.id === idBoton);
+    const kitAgregado = productos.find(kit => kit.id === idBoton);
 
     const kitEnCarrito = productosCarrito.find(kit => kit.id === idBoton);
     kitEnCarrito ? kitEnCarrito.cantidad++ : (kitAgregado.cantidad = 1, productosCarrito.push(kitAgregado));
@@ -117,10 +117,10 @@ const botonesPorMarca = () => {
                     : `<h3>Todos los kits</h3>`;
 
             const marcaSeleccionada = marcaId !== "todasLasMarcas" && marcaId !== "otrasMarcas"
-                ? kitCambioDeAceite.filter(kit => kit.marca === marcaId)
+                ? productos.filter(kit => kit.marca === marcaId)
                 : marcaId === "otrasMarcas"
                     ? []
-                    : kitCambioDeAceite;
+                    : productos;
 
             cargarKits(marcaSeleccionada);
         });
