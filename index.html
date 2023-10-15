@@ -8,7 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Productos</title>
+    <title>Incio</title>
 </head>
 
 <body>
@@ -29,70 +29,55 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Marcas de vehículos
-                            </a>
-                            <ul class="dropdown-menu">
-                                <ul id="listaMarcas" class="text-start p-2 botones">
-                                    <li><button id="todasLasMarcas" class="btn text-dark botones__marcas">Todas las
-                                            marcas</button></li>
-                                    <li><button id="chevrolet" class="btn text-dark botones__marcas">Chevrolet</button>
-                                    </li>
-                                    <li><button id="citroen" class="btn text-dark botones__marcas">Citroen</button></li>
-                                    <li><button id="fiat" class="btn text-dark botones__marcas">Fiat</button></li>
-                                    <li><button id="ford" class="btn text-dark botones__marcas">Ford</button></li>
-                                    <li><button id="nissan" class="btn text-dark botones__marcas">Nissan</button></li>
-                                    <li><button id="peugeot" class="btn text-dark botones__marcas">Peugeot</button></li>
-                                    <li><button id="renault" class="btn text-dark botones__marcas">Renault</button></li>
-                                    <li><button id="toyota" class="btn text-dark botones__marcas">Toyota</button></li>
-                                    <li><button id="volkswagen"
-                                            class="btn text-dark botones__marcas">Volkswagen</button></li>
-                                    <li><button id="otrasMarcas" class="btn"><a href="./otras-marcas.html"
-                                                class="text-decoration-none text-dark botones__marcas">Otras
-                                                marcas</a></button>
-                                    </li>
-                                </ul>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./productos.html">Nuestros productos</a>
                         </li>
                     </ul>
-                    <div id="div-carrito" class="text-center mx-4">
-                        <a href="./carrito.html" class="btn btn-primary position-relative icono-carrito">
-                            <i class='bx bx-cart'>
-                                <span id="carrito"
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    0
-                                    <span class="visually-hidden"></span>
-                                </span>
-                            </i>
-                        </a>
-                    </div>
                     <form id="buscador" class="d-flex" role="search">
                         <input id="inputSearch" class="form-control me-2" type="search" placeholder="Buscar"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
                 </div>
+                <div id="div-carrito" class="text-center mx-4">
+                    <a href="./carrito.html" class="btn btn-primary btn-carrito position-relative">
+                        <i class='bx bx-cart bx-xs'>
+                            <span id="carrito"
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                                <span class="visually-hidden"></span>
+                            </span>
+                        </i>
+                    </a>
+                </div>
             </div>
         </nav>
     </section>
-    <section class="container">
+    <section class="container-fluid background">
+        <div class="texto-imagen">
+            <p class="texto-principal"><span class="span">Somos una empresa dedicada al servicio y mantenimiento de autos.</span><br>Contamos con más de 10 años de experiencia en el rubro</br></p>
+            <button class="btn btn-primary boton-principal text-center"><a href="./productos.html" class="text-decoration-none text-white text-center comprar-ahora">Comprar ahora</a></button>
+        </div>
+    </section>
+    <section class="container my-2 text-black">
         <div class="row">
-            <div class="col">
-                <div class="row my-5">
-                    <div id="titulo" class="col d-flex justify-content-start mx-5">
-                        <h3 class="text-dark my-1 px-4 mb-5">Todos los kits</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="kitPorMarcas" class="col d-flex flex-wrap justify-content-center"></div>
-                </div>
+            <div class="col-md-7 col-sm-7 col-xs-12 d-flex justify-content-end">
+                <img class="img-fluid img__cambio" src="https://idfoil2.com/img/cms/3.png"
+                    alt="cambio de aceite y filtros">
+            </div>
+            <div
+                class="col-md-5 col-sm-5 col-xs-12 titular d-flex flex-column justify-content-center align-items-start">
+                <h1 class="titular__h1 text-center">REALIZAMOS</h1>
+                <h2 class="titular__h2 text-center">+ SERVICIOS</h2>
+                <ul class="p-0">
+                    <li>Cambio de aceite y filtros </li>
+                    <li>Trabajamos con vehículos nacionales e importado</li>
+                    <li>Revisión completa de los fluíidos</li>
+                    <li>Inspeccion avanzada de fluídos en cajas y diferenciales</li>
+                </ul>
             </div>
         </div>
     </section>
-
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -101,5 +86,4 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="js/funciones.js"></script>
 <script src="js/main.js"></script>
-
 </html>

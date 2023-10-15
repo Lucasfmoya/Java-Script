@@ -1,16 +1,17 @@
 // Array que va a contener los productos del fetch;
 let productos = [];
 
-fetch("./js/productos.json")
+
+const creandoFetch = () =>{
+    fetch("./js/productos.json")
     .then(response => response.json())
     .then(data => {
         productos = data;
         cargarKits(productos);
-/* 
-        // Local storage de todos los productos de la página;
-        localStorage.setItem("todos-los-productos", JSON.stringify(productos)); */
-    })
 
+        
+    });
+}
 
 // Obteniendo elementos del html y creando algunas variables necesarias;
 const botonesPorMarcas = document.querySelectorAll(".botones__marcas")
