@@ -1,7 +1,7 @@
 // Array que va a contener los productos del fetch;
 let kitCambioDeAceite = [];
 
-fetch("./kitCambioDeAceite.json")
+fetch("./json/kitCambioDeAceite.json")
     .then(response => response.json())
     .then(data => {
         kitCambioDeAceite = data;
