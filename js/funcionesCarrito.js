@@ -18,20 +18,19 @@ const cargarProductosAlCarrito = () => {
         carritoComprado.classList.add("disabled");
         botonesCarrito.classList.remove("disabled");
         let tableHTML = `
-    <table class="table align-middle">
+    <table class="table align-middle custom-table">
 `;
 
         productosCarrito.forEach(kit => {
             tableHTML += `
-        <tr>
-            <td><img src="${kit.imagen}" class="imagen__carrito" alt="${kit.descripcion}"></td>
-            <td class="w-50"><h5>${kit.nombre}</h5></td>
-            <td><h6>$${kit.precio}</h6></td>
-            <td><h6>${kit.cantidad}</h6></td>
-            <td></td>
-            <td>Subtotal</td>
-            <td>$${kit.cantidad * kit.precio}</td>
-            <td><button id="${kit.id}" class="btn h-75 botonEliminar"><i class='bx bx-trash bx-sm'></i></button></td>
+        <tr class="tabla">
+            <td class="imagen--tabla"><img src="${kit.imagen}" class="imagen__carrito" alt="${kit.descripcion}"></td>
+            <td class="titulo--tabla"><h5 class="titulo--tabla__h5">${kit.nombre}</h5></td>
+            <td class="texto--tabla"><h6 class="texto--tabla__h6">$${kit.precio}</h6></td>
+            <td class="texto--tabla"><h6 class="texto--tabla__h6">${kit.cantidad}</h6></td>
+            <td class="texto--tabla"><h6 class="texto--tabla__h6">Subtotal</h6></td>
+            <td class="texto--tabla"><h6 class="texto--tabla__h6">$${kit.cantidad * kit.precio}</h6></td>
+            <td class="icono--tabla"><button id="${kit.id}" class="btn h-75 botonEliminar"><i class='bx bx-trash bx-sm'></i></button></td>
         </tr>
         <tr>
             
@@ -39,10 +38,10 @@ const cargarProductosAlCarrito = () => {
     `;
         });
         tableHTML += `
-    <tr class="bg-primary">
-        <td colspan="5"></td>
+    <tr class="total--tabla">
+        <td colspan="4"></td>
         <td colspan="1"><b>Total</b></td>
-        <td><b>$${total}</b></td>
+        <td><b class="fs-6">$${total}</b></td>
     </tr>
 </table>`;
 
@@ -148,4 +147,4 @@ const navBar = () => {
     buscador.classList.toggle("mt-3", window.scrollY > 0);
     window.addEventListener("scroll", navBar);
 
-} 
+}

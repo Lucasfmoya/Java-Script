@@ -9,7 +9,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -22,8 +22,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="./index.html"><img class="img-logo" src="./img/logo-lubri.png"
-                            alt="Grupo O'Higgins"></a>
+                    <div class="img-collapse">
+                        <a class="navbar-brand mx-0" href="./index.html"><img class="img-logo" src="./img/logo-lubri.png"
+                                alt="Grupo O'Higgins"></a>
+                    </div>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
@@ -54,24 +56,18 @@
                     </div>
                 </div>
                 <div class="row carrito__contenedor">
-                    <div id="contenedor-carrito" class="col carrito__contenedor--contenedor-carrito"></div>
+                    <div id="contenedor-carrito" class="col table-responsive-sm carrito__contenedor--contenedor-carrito"></div>
                 </div>
                 <div class="row mt-5">
                     <div id="botonesCarrito" class="col disabled">
                         <div class="row">
-                            <div class="col d-flex justify-content-center">
-                                <button id="botonComprar" class="btn btn-primary h-75">
-                                    <p class="text-center">Comprar ahora</p>
+                            <div class="col d-flex justify-content-end">
+                                <button id="botonComprar" class="btn btn-primary mx-3">
+                                    <p class="text-center comprar-vaciar">Comprar ahora</p>
                                 </button>
-                            </div>
-                            <div class="col">
-                                <div class="row d-flex text-end">
-                                    <div class="col">
-                                        <button id="botonVaciar" class="btn btn-danger h-75 vaciar-carrito">
-                                            <p class="text-center">Vaciar carrito</p>
-                                        </button>
-                                    </div>
-                                </div>
+                                <button id="botonVaciar" class="btn btn-danger vaciar-carrito mx-3">
+                                    <p class="text-center comprar-vaciar">Vaciar carrito</p>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -94,7 +90,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="js/funcionesCarrito.js"></script>
+    <script src="./js/funcionesCarrito.js"></script>
     <script src="./js/carrito.js"></script>
 </body>
 
