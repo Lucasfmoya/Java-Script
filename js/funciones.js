@@ -2,15 +2,15 @@
 let productos = [];
 
 
-const creandoFetch = () =>{
+const creandoFetch = () => {
     fetch("./js/productos.json")
-    .then(response => response.json())
-    .then(data => {
-        productos = data;
-        cargarKits(productos);
+        .then(response => response.json())
+        .then(data => {
+            productos = data;
+            cargarKits(productos);
 
-        
-    });
+
+        });
 }
 
 // Obteniendo elementos del html y creando algunas variables necesarias;
@@ -141,4 +141,14 @@ const navBar = () => {
 }
 
 
+const buscar = () => {
 
+    let buscador = document.getElementById("inputSearch").value;
+
+    document.getElementById("buscador").addEventListener("submit", (event) => {
+        event.preventDefault();
+        buscar();
+    });
+    console.log(buscador);
+}
+buscar();
