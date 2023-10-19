@@ -21,6 +21,7 @@ const carrito = document.querySelector("#carrito");
 let botonAgregar;
 let productosCarrito;
 let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
+const tituloBusqueda = document.querySelector("#titulo-busqueda");
 
 // Función para validar si existen items en el carrito;
 const validarCarrito = () => {
@@ -100,8 +101,32 @@ const cargarKits = (marcaSeleccionada) => {
             </div>
         </div>
         `
+
     });
+    const inputSearch = document.getElementById("inputSearch");
+    inputSearch.addEventListener("input", () => {
+        const busqueda = inputSearch.value.toLowerCase();
+        if (busqueda !== "") {
+            tituloBusqueda.classList.remove("d-none");
+            titulo.classList.add("d-none");
+        } else {
+            tituloBusqueda.classList.add("d-none");
+            titulo.classList.remove("d-none");
+            sinResultados.classList.add("d-none");
+        }
+        const kitsFiltrados = marcaSeleccionada.filter(kit => {
+            
+            return kit.nombre.toLowerCase().includes(busqueda) || kit.descripcion.toLowerCase().includes(busqueda);
+
+        });
+
+        mostrarKitsFiltrados(kitsFiltrados);
+
+
+    });
+
     botonParaAgregar();
+
 };
 // Creando función para filtrar por marcas;
 const botonesPorMarca = () => {
@@ -141,14 +166,39 @@ const navBar = () => {
 }
 
 
-const buscar = () => {
+// Función para mostrar los kits filtrados;
+const mostrarKitsFiltrados = (kits) => {
+    kitPorMarcas.innerHTML = "";
+    if (kits.length === 0) {
 
-    let buscador = document.getElementById("inputSearch").value;
+        let sinResultados = document.querySelector("#sin-resultados");
+        sinResultados.classList.remove("d-none");
+       
+    } else {
+        kits.forEach(kit => {
+            kitPorMarcas.innerHTML += `
+            <div class="col-md-3 tarjetas">
+                <div class="row">
+                    <div class="col">
+                        <img src="${kit.imagen}" class="img-fluid imagen__auto" alt="${kit.descripcion}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-xs-12 d-flex flex-column justify-content-between">
+                        <h5 class="">${kit.nombre}</h5>
+                        <p class="text">${kit.descripcion}</p>
+                        <h6>$${kit.precio}</h6>
+                        <button id="${kit.id}" class="btn btn-primary botonCarrito">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            `
+            
+        });
+    
+        botonParaAgregar();
+    };
+    };
+    
 
-    document.getElementById("buscador").addEventListener("submit", (event) => {
-        event.preventDefault();
-        buscar();
-    });
-    console.log(buscador);
-}
-buscar();
+
