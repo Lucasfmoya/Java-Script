@@ -11,7 +11,7 @@
     <title>Productos</title>
 </head>
 
-<body>
+<body id="ir-arriba"> 
     <section class="nav-bar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -84,25 +84,24 @@
                     <div id="titulo" class="col d-flex justify-content-start mx-5">
                         <h3 class="text-dark my-1 px-4 mb-5">Todos los kits</h3>
                     </div>
-                    <div id="titulo-busqueda" class="col d-flex justify-content-start mx-5 d-none">
-                        <h3>Resultados de la búsqueda:</h3>
-                    </div>
-                    <div id="sin-resultados" class="col d-none">
-                        <div class="d-flex justify-content-center">
-                            <div class="alert alert-info w-75" role="alert">
-                                <p>Lo sentimos, para obtener un presupuesto para su vehículo pongase en contacto con nosotros.
+                    <div id="titulo-busqueda" class="col d-flex flex-column justify-content-start mx-5 mb-5 d-none">
+                        <h3 class="mb-5">Resultados de la búsqueda:</h3>
+                        <div id="sin-resultados" class="text-center d-flex justify-content-center d-none">
+                            <div class="alert alert-danger w-100 mt-2 mb-5" role="alert">
+                                <p class="fs-5">La búsqueda no arrojó resultados.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div id="kitPorMarcas" class="col d-flex flex-wrap justify-content-center"></div>
-                </div>
+            </div>
+            <div class="row mb-5">
+                <div id="kitPorMarcas" class="col d-flex flex-wrap justify-content-center"></div>
             </div>
         </div>
+        </div>
     </section>
-    <footer class="bg-dark">
+    <footer class="bg-dark footer">
         <div class="container-fluid">
             <div class="row text-white">
                 <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
@@ -112,11 +111,13 @@
                                 <li>
                                     <h5>Seguinos en nuestras redes</h5>
                                 </li>
-                                <li>
-                                    <h6>Instagram</h6>
+                                <li class="d-flex mb-2 text-center">
+                                    <h6 class="p-2">Instagram</h6>
+                                    <a class="mx-1" href="https://www.instagram.com/grupoohiggins/"><img class="img-fluid insta" src="./img/instagram.png" alt="Instagram"></a>
                                 </li>
-                                <li>
-                                    <h6>Facebook</h6>
+                                <li class="d-flex mb-2 text-center">
+                                    <h6 class="p-2">Facebook</h6>
+                                    <a class="mx-1" href="https://www.facebook.com/grupo.ohiggins.oficial/"><img class="img-fluid face" src="./img/facebook.png" alt="Facebook"></a>
                                 </li>
                             </ul>
                         </div>
@@ -135,14 +136,14 @@
                         </div>
                         <div class="col-lg-9">
                             <div class="text-center mb-5">
-                                <img class="imagen-footer" src="./img/logo-lubri.png" alt="Lubricentro Ohiggins">
+                                <a href="#ir-arriba"><img class="imagen-footer" src="./img/logo-lubri.png" alt="Lubricentro Ohiggins"></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex flex-column justify-content-center">
-                    <div class="mt-2 text-center">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <div class="mt-5 text-center">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13615.052981683286!2d-64.168609!3d-31.4481842!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2de589852c1%3A0xefe82bc72c2497ea!2sLubricentro%20O&#39;Higgins!5e0!3m2!1ses-419!2sar!4v1697591549789!5m2!1ses-419!2sar"
                             style="border:0;" allowfullscreen="" loading="lazy"
@@ -151,6 +152,7 @@
                     <div class="text-center">
                         <img class="img-fluid" src="./img/tarjetas.png" alt="Medios de pago">
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -163,4 +165,5 @@
     <script src="./js/funciones.js"></script>
     <script src="./js/productos.js"></script>
 </body>
+
 </html>

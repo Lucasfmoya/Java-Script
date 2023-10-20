@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body id="ir-arriba"> 
     <section class="nav-bar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -37,7 +37,7 @@
                     <form id="buscador" class="d-flex" role="search">
                         <input id="inputSearch" class="form-control me-2" type="search" placeholder="Buscar"
                             aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            <button class="btn btn-outline-success" type="submit"><a class="text-decoration-none enlace-buscar" href="./productos.html">Buscar</a></button>
                     </form>
                 </div>
             </div>
@@ -86,7 +86,7 @@
             </div>
         </div>
     </section>
-    <footer class="bg-dark">
+    <footer class="bg-dark footer">
         <div class="container-fluid">
             <div class="row text-white">
                 <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
@@ -96,11 +96,13 @@
                                 <li>
                                     <h5>Seguinos en nuestras redes</h5>
                                 </li>
-                                <li>
-                                    <h6>Instagram</h6>
+                                <li class="d-flex mb-2 text-center">
+                                    <h6 class="p-2">Instagram</h6>
+                                    <a class="mx-1" href="https://www.instagram.com/grupoohiggins/"><img class="img-fluid insta" src="./img/instagram.png" alt="Instagram"></a>
                                 </li>
-                                <li>
-                                    <h6>Facebook</h6>
+                                <li class="d-flex mb-2 text-center">
+                                    <h6 class="p-2">Facebook</h6>
+                                    <a class="mx-1" href="https://www.facebook.com/grupo.ohiggins.oficial/"><img class="img-fluid face" src="./img/facebook.png" alt="Facebook"></a>
                                 </li>
                             </ul>
                         </div>
@@ -119,7 +121,7 @@
                         </div>
                         <div class="col-lg-9">
                             <div class="text-center mb-5">
-                                <img class="imagen-footer" src="./img/logo-lubri.png" alt="Lubricentro Ohiggins">
+                                <a href="#ir-arriba"><img class="imagen-footer" src="./img/logo-lubri.png" alt="Lubricentro Ohiggins"></a>
                             </div>
                         </div>
                     </div>

@@ -2,3 +2,4 @@ navBar();
 validarCarrito();
 botonesPorMarca();
 cantidadEnCarrito();
+

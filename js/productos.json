@@ -170,7 +170,7 @@
     {
         "id": "Ford-1",
         "imagen": "./img/ka.png",
-        "nombre": "Kit Service Ford Ka 1.5",
+        "nombre": "Kit Service Ford Ka 3 cil 1.5",
         "descripcion": "Aceite + filtro de aceite + filtro de aire",
         "precio": 52000,
         "marca": "ford"
@@ -234,7 +234,7 @@
     {
         "id": "Nissan-3",
         "imagen": "./img/frontier.png",
-        "nombre": "Kit Service Frontier 2.5",
+        "nombre": "Kit Service Nissan Frontier 2.5",
         "descripcion": "Aceite + filtro de aceite + filtro de aire",
         "precio": 95000,
         "marca": "nissan"
@@ -290,7 +290,7 @@
     {
         "id": "Peugeot-6",
         "imagen": "./img/partner.png",
-        "nombre": "Kit Service Partner 1.6 HDI",
+        "nombre": "Kit Service Peugeot Partner 1.6 HDI",
         "descripcion": "Aceite + filtro de aceite + filtro de aire",
         "precio": 60000,
         "marca": "peugeot"
@@ -378,7 +378,7 @@
     {
         "id": "Vw-1",
         "imagen": "./img/gol.png",
-        "nombre": "Kit Service Gol Trend/Voyage/Suran",
+        "nombre": "Kit Service Volkswagen Gol Trend/Suran",
         "descripcion": "Aceite + filtro de aceite + filtro de aire",
         "precio": 50000,
         "marca": "volkswagen"
@@ -386,7 +386,7 @@
     {
         "id": "Vw-2",
         "imagen": "./img/polo.png",
-        "nombre": "Kit Service Suran/Polo Msi",
+        "nombre": "Kit Service Volkswagen Suran/Polo Msi",
         "descripcion": "Aceite + filtro de aceite + filtro de aire",
         "precio": 65000,
         "marca": "volkswagen"
@@ -394,7 +394,7 @@
     {
         "id": "Vw-3",
         "imagen": "./img/up.png",
-        "nombre": "Kit Service Up",
+        "nombre": "Kit Service Volkswagen Up",
         "descripcion": "Aceite + filtro de aceite + filtro de aire",
         "precio": 60000,
         "marca": "volkswagen"
@@ -402,7 +402,7 @@
     {
         "id": "Vw-4",
         "imagen": "./img/amarok.png",
-        "nombre": "Kit Service Amarok",
+        "nombre": "Kit Service Volkswagen Amarok",
         "descripcion": "Aceite + filtro de aceite + filtro de aire",
         "precio": 95000,
         "marca": "volkswagen"

@@ -7,6 +7,7 @@ const creandoFetch = () => {
         .then(response => response.json())
         .then(data => {
             productos = data;
+            productosOriginales = [...productos];
             cargarKits(productos);
 
 
@@ -22,6 +23,7 @@ let botonAgregar;
 let productosCarrito;
 let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 const tituloBusqueda = document.querySelector("#titulo-busqueda");
+const sinResultados = document.querySelector("#sin-resultados");
 
 // Función para validar si existen items en el carrito;
 const validarCarrito = () => {
@@ -103,6 +105,8 @@ const cargarKits = (marcaSeleccionada) => {
         `
 
     });
+    // Agregando clases para ocultar/mostrar contenedores dentro del dom;
+
     const inputSearch = document.getElementById("inputSearch");
     inputSearch.addEventListener("input", () => {
         const busqueda = inputSearch.value.toLowerCase();
@@ -116,15 +120,24 @@ const cargarKits = (marcaSeleccionada) => {
         }
         const kitsFiltrados = marcaSeleccionada.filter(kit => {
             
-            return kit.nombre.toLowerCase().includes(busqueda) || kit.descripcion.toLowerCase().includes(busqueda);
+            return kit.nombre.toLowerCase().includes(busqueda) || kit.descripcion.toLowerCase().includes(busqueda) || kit.marca.toLowerCase().includes(busqueda);
 
         });
+
 
         mostrarKitsFiltrados(kitsFiltrados);
 
 
     });
-
+    // Borrar la búsqueda con escape;
+    inputSearch.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            inputSearch.value = ""; 
+            const marcaSeleccionada = productosOriginales;
+            cargarKits(marcaSeleccionada);
+            sinResultados.classList.add("d-none");
+        }
+    });
     botonParaAgregar();
 
 };
@@ -146,7 +159,7 @@ const botonesPorMarca = () => {
                 ? productos.filter(kit => kit.marca === marcaId)
                 : marcaId === "otrasMarcas"
                     ? []
-                    : productos;
+                    : productosOriginales ;
 
             cargarKits(marcaSeleccionada);
         });
@@ -171,7 +184,6 @@ const mostrarKitsFiltrados = (kits) => {
     kitPorMarcas.innerHTML = "";
     if (kits.length === 0) {
 
-        let sinResultados = document.querySelector("#sin-resultados");
         sinResultados.classList.remove("d-none");
        
     } else {
